@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-$fa&(ttqq+5vu7b=5tc*&wiyj16((1w04a27#gl2wi96u1tk(h'
+SECRET_KEY = 'django-insecure-u78g^02b%r4^%$)tnj9#_nqe214nevjfoxaksj-hm)#j%aka8n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-sarirahul-studenstudypo-19xg6c7s6jl.ws-eu108.gitpod.io']
+ALLOWED_HOSTS = ['8000-sarirahul-studenstudypo-inskxst6wr6.ws-eu108.gitpod.io','.herokuapp.com']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'dashboard'
 ]
 
 MIDDLEWARE = [
