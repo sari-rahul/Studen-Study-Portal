@@ -62,11 +62,17 @@ main {
     color: whitesmoke !important;
     transition: 0.1s ease-in;
 }
+/*------------------------------------------------------ CARDs in NOTES PAGE*/
 .card-header {
-    color: black !important;
-    background: rgb(152, 214, 230) !important;
+    color: white !important;
+    background:#e93237 !important;
     transition: 0.3s ease-in;
+    text-transform: uppercase;
 }
+.card-body{
+    font-weight: 600;
+}
+/*------------------------------------------------------ CARD*/
 .card h4 {
     margin: 40px 40px 0 40px;
     text-align: left;
@@ -85,9 +91,7 @@ main {
 .card img {
     height: 210px;
 }
-.card-header {
-    background-color: rgb(133, 204, 231);
-}
+
 .card-img-top:hover {
     opacity: 0.9;
     transform: scale(1.02);
@@ -127,7 +131,6 @@ a:hover {
 
     padding: .8em 1.4em;
     padding-right: 4.7em;
-    background: #009ED8;
     border: none;
     color: white;
 }
@@ -135,6 +138,18 @@ a:hover {
     background: black;
     color: white;
     border: 0.5px solid white;
+}
+.btn-outline-info{
+    background-color: #e93237 !important;
+}
+button.btn.btn-outline-info{
+    color:white !important;
+    font-weight: 600;
+}
+
+/*------------------------------------------------------ LEGEND*/
+legend{
+    font-weight: 600 ;
 }
 /*------------------------------------------------------ FOOTER*/
 footer {
