@@ -58,21 +58,10 @@ main {
 
 }
 .card-header:hover {
-    background: rgb(11, 22, 83) !important;
+    background:  #0d494e !important;
     color: whitesmoke !important;
     transition: 0.1s ease-in;
 }
-/*------------------------------------------------------ CARDs in NOTES PAGE*/
-.card-header {
-    color: white !important;
-    background:#e93237 !important;
-    transition: 0.3s ease-in;
-    text-transform: uppercase;
-}
-.card-body{
-    font-weight: 600;
-}
-/*------------------------------------------------------ CARD*/
 .card h4 {
     margin: 40px 40px 0 40px;
     text-align: left;
@@ -106,6 +95,25 @@ main {
 .card-title h5{
     font-weight: 500;
 }
+/*------------------------------------------------------ CARDs in NOTES PAGE*/
+.card-header {
+    color: white !important;
+    background:#e93237 !important;
+    transition: 0.3s ease-in;
+    text-transform: uppercase;
+}
+.card-body{
+    font-weight: 600;
+}
+/*------------------------------------------------------ SUCCESS BAR*/
+.alert{
+    width :80%;
+    text-align: center;
+    background-color: #dddddd;
+    color: #0d494e;
+    font-weight: 500;
+}
+
 
 /*------------------------------------------------------ ANCHOR TAGS*/
 a {
