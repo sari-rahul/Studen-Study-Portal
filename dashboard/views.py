@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.views import generic
 from . forms import *
 # Create your views here.
 
@@ -21,3 +23,15 @@ def notes (request):
     notes = Note.objects.filter(user=request.user.id)
     context ={'notes':notes,'form':form}
     return render (request,"dashboard/notes.html",context)
+
+
+def delete_notes(request,pk=None):
+    del_note = Note.objects.filter(id=pk) 
+    del_note.delete()
+    return redirect("/notes")
+
+
+
+class notes_detail_view(generic.DetailView):
+    model = Note
+    template_name = 'dashboard/notes_detail.html' 
