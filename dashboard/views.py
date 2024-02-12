@@ -18,6 +18,6 @@ def notes (request):
     else:
         form = Notesform()
 
-    notes = Note.objects.filter(user=request.user)
+    notes = Note.objects.filter(user=request.user.id)
     context ={'notes':notes,'form':form}
     return render (request,"dashboard/notes.html",context)
