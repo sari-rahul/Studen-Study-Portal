@@ -84,7 +84,7 @@ def homework (request):
     else:
         form = Homeworkform()  
 
-    homework = Homework.objects.filter(user=request.user)
+    homework = Homework.objects.filter(user=request.user.id)
     if len(homework) == 0:
         homework_completed = True
     else:
