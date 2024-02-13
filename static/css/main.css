@@ -222,3 +222,14 @@ footer .column a+a {
 
     font-weight: 500;
 }
+/*------------------------------------------------------ TABLE SECTION*/
+table thead{
+   background-color: #e79288; 
+}
+table tbody{
+    background-color: #cbcecd;
+    color: black; 
+}
+td .form-check{
+    color:black !important;
+}
