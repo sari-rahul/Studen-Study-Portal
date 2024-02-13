@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.views import generic
+from youtubesearchpython import VideosSearch
 from . forms import *
 
 # Create your views here.
@@ -38,7 +39,8 @@ def notes (request):
 
 def delete_notes(request,pk=None):
     '''
-    View for Deleting notes
+    View for Deleting notes and displaying success message.
+
 
     '''
     del_note = Note.objects.filter(id=pk) 
@@ -99,7 +101,8 @@ def homework (request):
 
 def delete_homework(request,pk=None):
     '''
-    View for Deleting homeworks
+    View for Deleting homeworks and displaying success message.
+
 
     '''
     del_homework = Homework.objects.filter(id=pk) 
@@ -110,7 +113,8 @@ def delete_homework(request,pk=None):
 
 def update_homework(request,pk=None):
     '''
-    View for Updating the status of Homework done
+    View for Updating the status of Homework done and displaying success message.
+
 
     '''
     homework = Homework.objects.get(id=pk) 
@@ -129,3 +133,44 @@ class homework_detail_view(generic.DetailView):
     '''
     model = Homework
     template_name = 'dashboard/homework_detail_view.html'
+
+
+# ---------------------------------------------------------YOUTUBE PAGE VIEWS
+def youtube_search(request):
+    '''
+    View to search videos in Youtube
+    '''
+    if request.method == 'POST':
+        form = Commonform(request.POST)
+        search_text = request.POST['search_text']
+        video = VideosSearch(search_text,limit=10)
+        result_list = []
+        for i in video.result()['result']:
+            result_dict={
+                'input':search_text,
+                'title':i['title'],
+                'duration':i['duration'],
+                'thumbnail':i['thumbnails'][0]['url'],
+                'channel':i['channel']['name'],
+                'link':i['link'],
+                'views':i['viewCount']['short'],
+                'published':i['publishedTime']
+            }
+            desc = ''
+            if i['descriptionSnippet']:
+                for j in i['descriptionSnippet']:
+                    desc += j['text']
+            result_dict['description']= desc
+            result_list.append(result_dict)
+            context = {
+                'form':Commonform,
+                'results':result_list
+            }
+        return render(request,"dashboard/youtube_search.html",context)
+    else:
+        form = Commonform
+    context = {
+        'form':form
+    }
+
+    return render(request,"dashboard/youtube_search.html",context)
