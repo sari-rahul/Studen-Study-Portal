@@ -2,25 +2,25 @@
 {% load static %} 
 {% block content %}
 
-<section class='text-center container'>
+<section class= 'container'>
 
-    <div class="container">
+    <div class="container ">
 
         <div class="content-section p-0 mt-5">
 
             <div class="m-3">
-                <h3>{{ homework.subject }}</h3>
+                <h3 class="hw-heading">{{ homework.subject }}</h3>
                 <hr>
-                <h4>{{ homework.title }}</h4>
+                <h4 class="hw-title">{{ homework.title }}</h4>
             </div>
 
             <hr class="p-0 m-0">
-            <p class="description m-5 p-5">
+            <div class="hw-description m-3">
                 {{ homework.description }}
-            </p>
+            </div>
             <hr>
-            <h5>{{ homework.due_date}}</h5>
-            <hr>
+            <h5 class=" m-3 hw-due-data">{{ homework.due_date}}</h5>
+
         </div>
 
     </div>

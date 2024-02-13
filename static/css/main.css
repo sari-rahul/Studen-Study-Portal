@@ -187,7 +187,7 @@ footer .column a+a {
 
 /*------------------------------------------------------ FONTAWSOME ICONS*/
 .fa:hover {
-    color: red;
+    color: #e93237;
 
 }
 .fa {
@@ -233,3 +233,27 @@ table tbody{
 td .form-check{
     color:black !important;
 }
+
+/*------------------------------------------------------ HOMEWORK DETAIL SECTION*/
+.hw-heading{
+    text-transform: capitalize !important;
+    font-weight: 600;
+    color: #0d494e;
+}
+
+.hw-title{
+    text-transform: capitalize; 
+    color: #0d494e;
+}
+.hw-description{
+    height:30vh;
+}
+.hw-due-data{
+    color: #e93237;
+}
+/*------------------------------------------------------ HOMEWORK SECTION -VIEW BTN*/
+.view-btn{
+    color: green;
+    font-weight: 800;
+}
+
