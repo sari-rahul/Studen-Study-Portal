@@ -122,3 +122,11 @@ def update_homework(request,pk=None):
     homework.save()
     messages.success(request,f"Home work updated successfully!!!!")
     return redirect("/homeworks")
+
+
+class homework_detail_view(generic.DetailView):
+    '''
+    View for the Detailed view of each Homework
+    '''
+    model = Homework
+    template_name = 'dashboard/homework_detail_view.html'

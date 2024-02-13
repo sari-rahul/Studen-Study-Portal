@@ -1,0 +1,30 @@
+{% extends 'dashboard/base.html' %} 
+{% load static %} 
+{% block content %}
+
+<section class='text-center container'>
+
+    <div class="container">
+
+        <div class="content-section p-0 mt-5">
+
+            <div class="m-3">
+                <h3>{{ homework.subject }}</h3>
+                <hr>
+                <h4>{{ homework.title }}</h4>
+            </div>
+
+            <hr class="p-0 m-0">
+            <p class="description m-5 p-5">
+                {{ homework.description }}
+            </p>
+            <hr>
+            <h5>{{ homework.due_date}}</h5>
+            <hr>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock content %}
