@@ -107,3 +107,18 @@ def delete_homework(request,pk=None):
     del_homework.delete()
     messages.success(request,f"Home work deleted successfully!!!!")
     return redirect("/homeworks")
+
+
+def update_homework(request,pk=None):
+    '''
+    View for Updating the status of Homework done
+
+    '''
+    homework = Homework.objects.get(id=pk) 
+    if homework.is_finished == True:
+        homework.is_finished = False
+    else:
+        homework.is_finished = True
+    homework.save()
+    messages.success(request,f"Home work updated successfully!!!!")
+    return redirect("/homeworks")
