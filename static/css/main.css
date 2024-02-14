@@ -278,4 +278,7 @@ td .form-check{
     color: #0d494e;
     font-size: small;
 }
-
+/*------------------------------------------------------ TODO LIST PAGE*/
+.form-check:hover{
+    font-weight: 600;
+}

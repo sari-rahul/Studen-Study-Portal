@@ -182,14 +182,58 @@ def todo(request):
     '''
     View for the todopage
     '''
-    todo = Todo.objects.filter(user=request.user)
-    form = Todoform()
+    if request.method == 'POST':
+        form = Todoform(request.POST)
+        if form.is_valid():
+            completed = request.POST['is_completed']
+            try:
+                if completed == 'on':
+                    completed = True
+                else:
+                    completed = False
+            except:
+                completed = False
+            todos = Todo(
+                user = request.user,
+                title = request.POST['title'],
+                is_completed = completed,
+            )
+            todos.save()
+            messages.success(request,f"Items added to To-Do list from {request.user.username}!!!")
+    else:
+        form = Todoform()
+
+    todo = Todo.objects.filter(user=request.user.id)
     if len(todo) == 0:
         todo_completed = True
     else:
         todo_completed = False
+    
     context = {'todo':todo,
                 'todo_completed': todo_completed,
-                'form':form}
-
+                'todo_form':form}
     return render (request,"dashboard/todo.html",context)
+
+
+def delete_todo_list(request,pk=None):
+    '''
+        View for Deleting todo list items and displaying success message.
+    '''
+    del_todo_list = Todo.objects.filter(id=pk) 
+    del_todo_list.delete()
+    messages.success(request,f"Item successfully deleted from To-Do List!!!!")
+    return redirect("/todo")
+
+def update_todo_list(request,pk=None):
+    '''
+    View for Updating the status of items in ToDo list done and displaying success message
+
+    '''
+    todo = Todo.objects.get(id=pk) 
+    if todo.is_completed == True:
+        todo.is_completed = False
+    else:
+        todo.is_completed = True
+    todo.save()
+    messages.success(request,f"Todo list updated successfully!!!!")
+    return redirect("/todo")
