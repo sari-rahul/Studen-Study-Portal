@@ -12,7 +12,8 @@ def home (request):
     View for the Home Page.
 
     '''
-    return render (request,"dashboard/home.html")
+    context = {'user':request.user}
+    return render (request,"dashboard/home.html",context)
 
 
 # ---------------------------------------------------------NOTES PAGE VIEWS
@@ -41,10 +42,10 @@ def delete_notes(request,pk=None):
     '''
     View for Deleting notes and displaying success message.
 
-
     '''
     del_note = Note.objects.filter(id=pk) 
     del_note.delete()
+    messages.success(request,f"Note deleted successfully")
     return redirect("/notes")
 
 class notes_detail_view(generic.DetailView):
@@ -174,3 +175,21 @@ def youtube_search(request):
     }
 
     return render(request,"dashboard/youtube_search.html",context)
+
+    
+# ---------------------------------------------------------TO-DO VIEWS
+def todo(request):
+    '''
+    View for the todopage
+    '''
+    todo = Todo.objects.filter(user=request.user)
+    form = Todoform()
+    if len(todo) == 0:
+        todo_completed = True
+    else:
+        todo_completed = False
+    context = {'todo':todo,
+                'todo_completed': todo_completed,
+                'form':form}
+
+    return render (request,"dashboard/todo.html",context)

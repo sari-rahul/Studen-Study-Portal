@@ -19,3 +19,8 @@ class Homeworkform(forms.ModelForm):
 
 class Commonform(forms.Form):
     search_text = forms.CharField(max_length=100,label='Enter your search here')
+
+class Todoform(forms.ModelForm):
+    class Meta:
+        model = Todo
+        fields = ['title','is_completed']

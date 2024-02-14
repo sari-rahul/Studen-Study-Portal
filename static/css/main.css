@@ -29,7 +29,10 @@ body {
 main {
     font-family: Barlow, Quicksand, Rubik, sans-serif, serif, 'Times New Roman', Times, serif !important;
 }
-
+/*------------------------------------------------------ USERNAME*/
+.username{
+    text-transform: capitalize !important;
+}
 
 
 /*------------------------------------------------------ NAVIGATION BAR*/
@@ -255,5 +258,24 @@ td .form-check{
 .view-btn{
     color: green;
     font-weight: 800;
+}
+/*------------------------------------------------------ YOUTUBE SEARCH*/
+.yt-s-cardheader{
+    background-color: #a3cfc2 !important;
+    color: #0d494e;
+    text-transform: capitalize;
+    font-size: medium;
+    text-align: left;
+}
+.yt-s-cardheader:hover{
+    background-color: #7cd0b7 !important;
+}
+
+.yt-s-cardbody:hover{
+    background-color: #7cd0b7 ;
+}
+.yt-s-cardbody{
+    color: #0d494e;
+    font-size: small;
 }
 

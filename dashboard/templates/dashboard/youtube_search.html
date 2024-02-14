@@ -10,14 +10,15 @@
     </form><br>
     {% for result in results %}
     <a href="{{ result.link }}" target="_blank">
+        <br>
         <div class="card">
-            <div class="card-header">
+            <div class="card-header  yt-s-cardheader">
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-5 thumbnail-card ">
                         <img class="img-fluid" src="{{ result.thumbnail }}" alt="">
 
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-md-7 yt-s-cardbody">
                         <h3 class="p-0 m-0">{{ result.title }}</h3>
                         <b>
                             <u>

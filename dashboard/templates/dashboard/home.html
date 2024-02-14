@@ -2,13 +2,13 @@
 {% load static %} 
 {% block content %}
 
-<section class="container text-center">
-  <h3>Welcome,</h3>
+<section class="container text-center username">
+  <h3>Welcome, {{ user}}</h3>
 
   <hr> <br>
   <div class="row">
     <div class="col-md-3">
-      <a href="#">
+      <a href="{% url 'notes' %}">
         <div class="card">
           <img class="card-img-top" src="{% static 'images/notes.jpg' %}" alt="Notes image">
           <div class="card-body">
@@ -22,12 +22,12 @@
     </div>
 
     <div class="col-md-3">
-      <a href="#">
+      <a href="{% url 'homeworks' %}">
         <div class="card">
           <img class="card-img-top" src="{% static 'images/homework.jpg' %}" alt="Homework image">
           <div class="card-body">
             <h5 class="card-title ">
-              Homework
+              Homeworks
             </h5>
             Add homeworks and assign them deadlines. They will be displayed prioritised by deadlines.
           </div>
@@ -48,7 +48,7 @@
       </a>
     </div>
     <div class="col-md-3">
-      <a href="#">
+      <a href="{% url 'todo' %}">
         <div class="card">
           <img class="card-img-top" src="{% static 'images/todo.jpg' %}" alt="Todo image">
           <div class="card-body">
@@ -64,7 +64,7 @@
   <br><br><br>
   <div class="row">
     <div class="col-md-3 ">
-      <a href="#">
+      <a href="{% url 'youtube_search' %}">
         <div class="card mt-20">
           <img class="card-img-top" src="{% static 'images/youtube.jpg' %}" alt="Youtube image">
           <div class="card-body">
@@ -111,7 +111,7 @@
     <div class="col-md-3">
       <a href="#">
         <div class="card">
-          <img class="card-img-top" src="{% static 'images/ruler1.jpg' %}" alt="Notes image">
+          <img class="card-img-top" src="{% static 'images/calculator.webp' %}" alt="Notes image">
           <div class="card-body">
             <h5 class="card-title ">
               Conversion
