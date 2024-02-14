@@ -282,3 +282,22 @@ td .form-check{
 .form-check:hover{
     font-weight: 600;
 }
+/*------------------------------------------------------ BOOK SEARCH PAGE*/
+
+.bookscardheader{
+    background-color: #a3cfc2 !important;
+    color: #0d494e;
+    text-transform: capitalize;
+    font-size: medium;
+    text-align: left;
+}
+.bookscardheader:hover{
+    background-color: #7cd0b7 !important;
+}
+.bookscardheader{
+    color: #0d494e;
+    font-size: small;
+}
+.bookscardheader:hover{
+    background-color: #7cd0b7 ;
+}

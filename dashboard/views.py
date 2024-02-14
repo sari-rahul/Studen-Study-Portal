@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.views import generic
 from youtubesearchpython import VideosSearch
 from . forms import *
+import requests
 
 # Create your views here.
 # ---------------------------------------------------------HOME VIEWS
@@ -236,3 +237,40 @@ def update_todo_list(request,pk=None):
     todo.save()
     messages.success(request,f"Todo list updated successfully!!!!")
     return redirect("/todo")
+
+# ---------------------------------------------------------BOOKS PAGE VIEWS
+def books(request):
+    '''
+    View to search books
+    '''
+    if request.method == 'POST':
+        form = Commonform(request.POST)
+        search_text = request.POST['search_text']
+        url = "https://www.googleapis.com/books/v1/volumes?q="+search_text
+        r = requests.get(url)
+        answer = r.json()
+        result_list = []
+        for i in range(10):
+            result_dict={
+                'title':answer['items'][i]['volumeInfo']['title'],
+                'subtitle':answer['items'][i]['volumeInfo'].get('subtitle'),
+                'description':answer['items'][i]['volumeInfo'].get('description'),
+                'count':answer['items'][i]['volumeInfo'].get('pageCount'),
+                'categories':answer['items'][i]['volumeInfo'].get('categories'),
+                'rating':answer['items'][i]['volumeInfo'].get('pageRating'),
+                'thumbnail':answer['items'][i]['volumeInfo'].get('imageLinks'),
+                'preview':answer['items'][i]['volumeInfo'].get('preview'),
+                
+            }
+            result_list.append(result_dict)
+            context = {
+                'form':Commonform,
+                'results':result_list
+            }
+        return render(request,"dashboard/books.html",context)
+    else:
+        form = Commonform
+    context = {
+        'form':form
+    }
+    return render(request,"dashboard/books.html",context)

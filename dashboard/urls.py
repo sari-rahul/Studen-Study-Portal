@@ -21,5 +21,8 @@ urlpatterns= [
     path('todo',views.todo, name="todo"),
     path('delete_todo_list/<int:pk>',views.delete_todo_list,name="delete-todo"),
     path('update_todo_list/<int:pk>',views.update_todo_list,name= "update-todo"),
-    
+
+#--------------------------------------------------------------------------------url todo page
+    path('books',views.books, name="books"),
+   
 ]
