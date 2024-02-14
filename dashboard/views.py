@@ -196,8 +196,7 @@ def todo(request):
             todos = Todo(
                 user = request.user,
                 title = request.POST['title'],
-                is_completed = completed,
-            )
+                is_completed = completed)
             todos.save()
             messages.success(request,f"Items added to To-Do list from {request.user.username}!!!")
     else:
