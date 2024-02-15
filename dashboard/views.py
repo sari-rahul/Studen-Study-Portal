@@ -5,6 +5,7 @@ from django.views import generic
 from youtubesearchpython import VideosSearch
 from . forms import *
 import requests
+import wikipedia
 
 # Create your views here.
 # ---------------------------------------------------------HOME VIEWS
@@ -274,3 +275,68 @@ def books(request):
         'form':form
     }
     return render(request,"dashboard/books.html",context)
+
+
+# ---------------------------------------------------------DICTIONARY PAGE VIEWS
+def dictionary(request):
+    '''
+    View for Dictionary
+    '''
+    if request.method == 'POST':
+        form = Commonform(request.POST)
+        search_text = request.POST['search_text']
+        url = "https://api.dictionaryapi.dev/api/v2/entries/en/"+search_text
+        r = requests.get(url)
+        answer = r.json()
+        try:
+            phonetics= answer[0]['phonetics'][0]['text']
+            audio= answer[0]['phonetics'][0]['audio']
+            definition= answer[0]['meanings'][0]['definitions'][0]['definition']
+            example = answer[0]['meanings'][0]['definitions'][0]['example']
+            synonyms = answer[0]['meanings'][0]['definitions'][0]['synonyms']
+            context={
+                    'form':form,
+                    'input':search_text,
+                    'phonetics':phonetics,
+                    'audio':audio,
+                    'definition':definition,
+                    'example':example,
+                    'synonyms':synonyms
+                }              
+        except:
+            context={
+                'form':form,
+                'input':'',
+            }
+        return render(request,"dashboard/dictionary.html",context)
+
+    else:            
+        form = Commonform
+    context={
+        'form':form
+    }
+    return render(request,"dashboard/dictionary.html",context) 
+
+
+# ---------------------------------------------------------WIKIPEDIA PAGE VIEWS
+def wiki(request):
+    '''
+    View for Wikipedia
+    '''
+    if request.method == 'POST':
+        text = request.POST['search_text']
+        form = Commonform(request.POST)
+        search = wikipedia.page(text)
+        context = {
+            'form': form,
+            'title':search.title,
+            'link':search.url,
+            'description':search.summary
+        }
+        return render(request,"dashboard/wiki.html",context)
+    else:
+        form = Commonform
+        context= {
+        'form':form
+        }
+    return render(request,"dashboard/wiki.html",context)

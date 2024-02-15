@@ -9,4 +9,5 @@ httpcore==1.0.2
 httpx==0.26.0
 psycopg2==2.9.9
 sqlparse==0.4.4
+wikipedia==1.4.0
 youtube-search-python==1.6.6

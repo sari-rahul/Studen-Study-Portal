@@ -35,14 +35,14 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                Options
+                services
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{% url 'books' %}">Books</a>
                 <a class="dropdown-item" href="#">Wikipedia</a>
                 <div class="dropdown-divider"></div>
 
-                <a class="dropdown-item" href="#">Dictionary</a>
+                <a class="dropdown-item" href="{% url 'dictionary' %}">Dictionary</a>
                 <a class="dropdown-item" href="{% url 'youtube_search' %}">Youtube</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{% url 'todo' %}">To-do</a>
