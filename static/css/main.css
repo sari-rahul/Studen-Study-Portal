@@ -286,18 +286,22 @@ td .form-check{
 
 .bookscardheader{
     background-color: #a3cfc2 !important;
-    color: #0d494e;
+    color: #0d494e !important;
     text-transform: capitalize;
     font-size: medium;
     text-align: left;
 }
 .bookscardheader:hover{
     background-color: #7cd0b7 !important;
+    color: #0d494e !important;
+
 }
 .bookscardheader{
-    color: #0d494e;
+    color: #0d494e !important;
     font-size: small;
 }
 .bookscardheader:hover{
     background-color: #7cd0b7 ;
+    color: #0d494e !important;
+
 }
