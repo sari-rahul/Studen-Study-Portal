@@ -40,8 +40,11 @@ main {
     background-color: #0d494e !important;
     
 }
+.nav-link{
+    border-radius: 8px;
+}
 .nav-link:hover {
-    background: black !important;
+    background: #f35f64 !important;
     color: white !important;
     transition: 0.7s ease;
 }
@@ -194,10 +197,16 @@ footer .column a+a {
 
 }
 .fa {
-    color: black;
+    color: #0d494e;
 }
 .profa {
     color: black;
+}
+.fa-github:hover{
+    color: #e93237;
+}
+.trash-btn:hover{
+    color: #e93237 ;
 }
 
 /*------------------------------------------------------ CONTENT SECTION*/
@@ -227,14 +236,23 @@ footer .column a+a {
 }
 /*------------------------------------------------------ TABLE SECTION*/
 table thead{
-   background-color: #e79288; 
+   background-color: #e79288 !important; 
+   text-align: left;
+   
 }
 table tbody{
     background-color: #cbcecd;
-    color: black; 
+    color: black;
+    text-align: left; 
 }
 td .form-check{
     color:black !important;
+}
+/*------------------------------------------------------ NOTES DETAIL SECTION*/
+.notes-detail{
+    text-transform: capitalize !important;
+    font-weight: 600;
+    color: #0d494e;
 }
 
 /*------------------------------------------------------ HOMEWORK DETAIL SECTION*/
@@ -253,6 +271,11 @@ td .form-check{
 }
 .hw-due-data{
     color: #e93237;
+}
+.hw-container{
+    background-color: #c5c5c4 !important;
+    color: #0d494e;
+    padding: 0px !important;
 }
 /*------------------------------------------------------ HOMEWORK SECTION -VIEW BTN*/
 .view-btn{
@@ -279,8 +302,16 @@ td .form-check{
     font-size: small;
 }
 /*------------------------------------------------------ TODO LIST PAGE*/
+.form-check{
+    text-align: left;
+}
 .form-check:hover{
     font-weight: 600;
+}
+.todo-container{
+    background-color: #e79288 !important;
+    color: #0d494e;
+    padding: 0px !important; 
 }
 /*------------------------------------------------------ BOOK SEARCH PAGE*/
 
@@ -304,4 +335,83 @@ td .form-check{
     background-color: #7cd0b7 ;
     color: #0d494e !important;
 
+}
+/*------------------------------------------------------WIKIPEDIA SEARCH PAGE*/
+
+.custom-header:hover{
+    background-color: white !important;
+}
+.wiki-container{
+    color: #0d494e !important;
+}
+.wiki-container h2{
+    color: #0d494e !important;  
+}
+/*------------------------------------------------------CALCULATOR SEARCH PAGE*/
+
+.cal-container {
+    width: 250px;
+    height: 400px;
+    margin: 80px auto;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+ 
+    /* box-shadow is used to achieve Neumorphism 
+    by using a light shadow and a dark shadow*/
+    box-shadow: 5px 5px 10px #b6a9a9,
+        -5px -5px 10px #ffffff;
+}
+#display {
+    border: 1px solid white;
+    outline: none;
+    color: rgb(248, 245, 245);
+    text-align: right;
+    font-weight: 600;
+    padding: 15px;
+    margin: 30px 0 20px 0;
+    background: transparent;
+ 
+    /* Inset shadow gives the appearance that 
+      the element is being pressed into it.*/
+    box-shadow: inset 2px 2px 5px #babecc,
+        inset -1px -1px 5px #ffffff;
+}
+.cal-btn {
+    margin: 15px 0 0 5px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50%;
+    color: white;
+    background-color: rgb(86, 84, 84);
+ 
+    /* box-shadow is used to achieve Neumorphism 
+    by using a light shadow and a dark shadow */
+    
+    display: inline-block;
+}
+.cal-btn:active {
+ 
+    /* When the button is pressed, the inset 
+    shadow provides the impression that the 
+    element is being pressed into it */
+    box-shadow: inset 1px 1px 1px #ebdddd,
+        inset -2px -2px 2px #dfcccc;
+}
+.cal-box {
+    width: 200px;
+    margin: 20px auto;
+}
+.clearButton {
+    color: white;
+    background-color: rgb(255, 188, 4);
+}
+ 
+.mathbutton {
+    color: white;
+    background-color: rgb(255, 188, 4);
 }

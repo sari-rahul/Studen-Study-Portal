@@ -3,9 +3,9 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="container table-responsive">
+<div class="container table-responsive hw-container">
     {% if not homework_completed %}
-    <table class="table table-hover table-light">
+    <table class="table table-hover ">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -43,14 +43,16 @@
                 <td><a href="{% url 'delete-homework' homework.id %}"><i class="fa fa-trash fa-2x"></i></a></td>
                 <td><a href="{% url 'homework-detail' homework.id %}" class="view-btn"> View Now </a></td>
             </tr>
+            
             {% endfor %}
         </tbody>
     </table>
+    
     {% else %}
     <h4>All homeworks are completed!! Create to have more!!</h4>
     {% endif %}
 </div>
-
+<br><br>
 <div class=" container">
     <form method="POST">
         {% csrf_token %}

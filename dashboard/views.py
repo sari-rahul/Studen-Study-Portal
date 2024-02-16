@@ -340,3 +340,31 @@ def wiki(request):
         'form':form
         }
     return render(request,"dashboard/wiki.html",context)
+
+# ---------------------------------------------------------CALCULATOR PAGE VIEW
+def calculator(request):
+    
+    return render(request,"dashboard/calculator.html")
+
+# ---------------------------------------------------------PROFILE VIEWS
+def profile(request):
+    hw_data = Homework.objects.filter(is_finished=False,user=request.user)
+    todo_data = Todo.objects.filter(is_completed=False,user=request.user)
+    
+    if len(hw_data)==0:
+        hw_done = True
+    else:
+        hw_done = False
+    
+    if len(todo_data)==0:
+        todo_done = True
+    else:
+        todo_done = False
+    context={
+        'hw_data':hw_data,
+        'todo_data':todo_data,
+        'hw_done':hw_done,
+        'todo_done':todo_done
+    }
+
+    return render(request,"dashboard/profile.html",context)

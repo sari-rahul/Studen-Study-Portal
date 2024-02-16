@@ -22,7 +22,7 @@ urlpatterns= [
     path('delete_todo_list/<int:pk>',views.delete_todo_list,name="delete-todo"),
     path('update_todo_list/<int:pk>',views.update_todo_list,name= "update-todo"),
 
-#--------------------------------------------------------------------------------url todo page
+#--------------------------------------------------------------------------------url books page
     path('books',views.books, name="books"),
 
 #--------------------------------------------------------------------------------url dictionary page
@@ -30,5 +30,11 @@ urlpatterns= [
 
 #--------------------------------------------------------------------------------url wikipedia page
     path('wiki',views.wiki, name="wiki"),
+
+#--------------------------------------------------------------------------------url calculator page
+    path('calculator',views.calculator, name="calculator"),
+
+#--------------------------------------------------------------------------------url profile page
+    path('profile',views.profile, name="profile"),
 
 ]
