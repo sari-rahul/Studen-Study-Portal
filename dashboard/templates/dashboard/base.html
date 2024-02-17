@@ -42,18 +42,18 @@
                 services
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{% url 'books' %}">Books</a>
-                <a class="dropdown-item" href="{% url 'wiki' %}">Wikipedia</a>
-                <div class="dropdown-divider"></div>
-
-                <a class="dropdown-item" href="{% url 'dictionary' %}">Dictionary</a>
-                <a class="dropdown-item" href="{% url 'youtube_search' %}">Youtube</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{% url 'todo' %}">To-do</a>
-                <a class="dropdown-item" href="{% url 'homeworks' %}">Homework</a>
-                <div class="dropdown-divider"></div>
-
                 <a class="dropdown-item" href="{% url 'notes' %}">Notes</a>
+                <a class="dropdown-item" href="{% url 'homeworks' %}">Homeworks</a>
+                <div class="dropdown-divider"></div>
+
+                <a class="dropdown-item" href="{% url 'books' %}">Books</a>
+                <a class="dropdown-item" href="{% url 'todo' %}">To-Do</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'youtube_search' %}">You Tube</a>
+                <a class="dropdown-item" href="{% url 'dictionary' %}">Dictionary</a>
+                <div class="dropdown-divider"></div>
+
+                <a class="dropdown-item" href="{% url 'wiki' %}">Wikipedia</a>
                 <a class="dropdown-item" href="{% url 'calculator' %}">Calculator</a>
               </div>
             </li>
@@ -68,7 +68,7 @@
             {% else %}
             <li class="nav-item">
               <a class="nav-link {% if request.path == signup_url %}active{% endif %}" 
-              aria-current="page"href="{% url 'account_signup' %}">Register</a>
+              aria-current="page"href="{% url 'account_signup' %}">Register/SignUp</a>
               <li class="nav-item">
                 <a class="nav-link {% if request.path == login_url %}active{% endif %}" 
                 aria-current="page" href="{% url 'account_login' %}">Login</a>

@@ -1,5 +1,5 @@
-{% extends "dashbooard/base.html" %}
-
+{% extends "dashboard/base.html" %}
+{% load crispy_forms_tags %}
 {% load i18n %}
 {% load account socialaccount %}
 
@@ -10,8 +10,9 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
+            <br><br>
             <h3>{% trans "Sign In" %}</h3>
-
+            <br><br>
             <p>{% blocktrans %}Welcome back to the code|star blog. To leave a comment or like a post, please log in. If
                 you
                 have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
@@ -22,7 +23,7 @@
         <div class="col-md-8 mt-3 offset-md-2">
             <form class="login" method="POST" action="{% url 'account_login' %}">
                 {% csrf_token %}
-                {{ form.as_p }}
+                {{ form|crispy }}
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}

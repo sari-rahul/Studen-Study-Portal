@@ -31,7 +31,9 @@ def notes (request):
                 user=request.user,title=request.POST['title'],
                 description=request.POST['description'])
             notes.save()
+            form = Notesform()
         messages.success(request,f"Notes added successfully from {request.user.username}")
+
     else:
         form = Notesform()
 
@@ -84,6 +86,7 @@ def homework (request):
                 is_finished=finished
                 )
             homework.save()
+            form = Homeworkformform()
             messages.success(request,f"Home work added successfully!!!!")
 
     else:
@@ -186,8 +189,9 @@ def todo(request):
     '''
     if request.method == 'POST':
         form = Todoform(request.POST)
+        print(request.POST)
         if form.is_valid():
-            completed = request.POST['is_completed']
+            is_completed = request.POST.get('is_completed', False)
             try:
                 if completed == 'on':
                     completed = True
@@ -200,6 +204,7 @@ def todo(request):
                 title = request.POST['title'],
                 is_completed = completed)
             todos.save()
+            form = Todoform()
             messages.success(request,f"Items added to To-Do list from {request.user.username}!!!")
     else:
         form = Todoform()

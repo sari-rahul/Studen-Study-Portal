@@ -160,6 +160,17 @@ button.btn.btn-outline-info{
     color:white !important;
     font-weight: 600;
 }
+.btn .btn-danger{
+    color:white !important;
+    font-weight: 600;
+}
+.btn .btn-danger:hover{
+    background-color: #0d494e !important;
+}
+.btn-signup {
+    background-color: #e93237 !important;
+    color:white ;
+}
 
 /*------------------------------------------------------ LEGEND*/
 legend{

@@ -45,11 +45,13 @@
         </table>
         {% else %}
         <h3>All To dos are completed!!!!</h3> 
-        <a href="#" class="btn btn-danger">To Do</a>
+        <br><br>
+        <a href="{% url 'todo'%}" class="btn btn-danger">Create To-Do List</a>
         {% endif %}
         <br><br>
+        <hr><br><br>
         {% if not hw_done %}
-        <h2>Homeworks to be Completed</h2>
+        <h3>Homeworks to be Completed</h3>
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -91,8 +93,9 @@
         </table>
         {% else %}
         <h3>All To homeworks are completed!!!!</h3>
-
-        <a href="#" class="btn btn-danger">Homeworks</a>
+        <br><br>
+        <a href="{% url 'homeworks'%}" class="btn btn-danger"> Create Homeworks</a>
+        
         {% endif %}
     </div>
 </section>
