@@ -1,0 +1,428 @@
+/*------------------------------------------------------ FONT*/
+@import url("https://fonts.googleapis.com/css?family=Acme|Lobster|Patua+One|Rubik|Sniglet|Quicksand|Barlow");
+
+
+/*------------------------------------------------------ GENERAL*/
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
+}
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.5));
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+}
+.example::-webkit-scrollbar {
+    display: none;
+}
+
+/*------------------------------------------------------ MAIN*/
+main {
+    font-family: Barlow, Quicksand, Rubik, sans-serif, serif, 'Times New Roman', Times, serif !important;
+}
+/*------------------------------------------------------ USERNAME*/
+.username{
+    text-transform: capitalize !important;
+}
+
+
+/*------------------------------------------------------ NAVIGATION BAR*/
+.navbar {
+    background-color: #0d494e !important;
+    
+}
+.nav-link{
+    border-radius: 8px;
+}
+.nav-link:hover {
+    background: #f35f64 !important;
+    color: white !important;
+    transition: 0.7s ease;
+}
+.navbar-dark .navbar-brand{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.navbar-dark .navbar-nav .nav-link{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+
+/*------------------------------------------------------ CARD*/
+.card {
+    box-shadow: 15px 15px 10px rgb(78, 77, 77);
+
+}
+.card-header:hover {
+    background:  #0d494e !important;
+    color: whitesmoke !important;
+    transition: 0.1s ease-in;
+}
+.card h4 {
+    margin: 40px 40px 0 40px;
+    text-align: left;
+}
+
+.card h6 {
+    margin: 25px 40px 0 40px;
+    text-align: left;
+}
+
+.card p {
+    text-align: right;
+    margin-right: 50px;
+    line-height: 10px;
+}
+.card img {
+    height: 210px;
+}
+
+.card-img-top:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+    transition: 0.2s ease;
+
+}
+.col-md-3 .card {
+    width: 100%;
+    height: 100%;
+
+}
+.card-title h5{
+    font-weight: 500;
+}
+/*------------------------------------------------------ CARDs in NOTES PAGE*/
+.card-header {
+    color: white !important;
+    background:#e93237 !important;
+    transition: 0.3s ease-in;
+    text-transform: uppercase;
+}
+.card-body{
+    font-weight: 600;
+}
+/*------------------------------------------------------ SUCCESS BAR*/
+.alert{
+    width :80%;
+    text-align: center;
+    background-color: #dddddd;
+    color: #0d494e;
+    font-weight: 500;
+}
+
+
+/*------------------------------------------------------ ANCHOR TAGS*/
+a {
+    text-decoration: none !important;
+    color: black;
+}
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+.custom-header:hover {
+    background: rgb(143, 189, 186) !important;
+}
+
+.icon-bar {
+    color: black;
+}
+
+/*------------------------------------------------------ BUTTONS*/
+.button {
+    display: inline-block;
+    font-family: "Montserrat", "Trebuchet MS", Helvetica, sans-serif;
+
+    padding: .8em 1.4em;
+    padding-right: 4.7em;
+    border: none;
+    color: white;
+}
+.btn:hover {
+    background: black;
+    color: white;
+    border: 0.5px solid white;
+}
+.btn-outline-info{
+    background-color: #e93237 !important;
+}
+button.btn.btn-outline-info{
+    color:white !important;
+    font-weight: 600;
+}
+.btn .btn-danger{
+    color:white !important;
+    font-weight: 600;
+}
+.btn .btn-danger:hover{
+    background-color: #0d494e !important;
+}
+.btn-signup {
+    background-color: #e93237 !important;
+    color:white ;
+}
+
+/*------------------------------------------------------ LEGEND*/
+legend{
+    font-weight: 600 ;
+}
+/*------------------------------------------------------ FOOTER*/
+footer {
+    font-family: Rubik, sans-serif, serif, 'Times New Roman', Times, serif;
+    background-color: #0d494e;
+    height:4rem;
+    width: 100%;
+    color: white;
+}
+
+footer .container-fluid {
+    padding: 10vmin 10vmin;
+    
+}
+
+footer .column a+a {
+    padding: 0 0.7em;
+}
+
+
+.myimage {
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+/*------------------------------------------------------ FONTAWSOME ICONS*/
+.fa:hover {
+    color: #e93237;
+
+}
+.fa {
+    color: #0d494e;
+}
+.profa {
+    color: black;
+}
+.fa-github:hover{
+    color: #e93237;
+}
+.trash-btn:hover{
+    color: #e93237 ;
+}
+
+/*------------------------------------------------------ CONTENT SECTION*/
+.content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+/*------------------------------------------------------ IMAGES*/
+.account-img {
+    height: 125px !important;
+    width: 125px !important;
+    margin-right: 20px;
+    margin-bottom: 16px;
+}
+
+.account-heading {
+    font-size: 2.5rem;
+}
+
+.container h3{
+
+    font-weight: 500;
+}
+/*------------------------------------------------------ TABLE SECTION*/
+table thead{
+   background-color: #e79288 !important; 
+   text-align: left;
+   
+}
+table tbody{
+    background-color: #cbcecd;
+    color: black;
+    text-align: left; 
+}
+td .form-check{
+    color:black !important;
+}
+/*------------------------------------------------------ NOTES DETAIL SECTION*/
+.notes-detail{
+    text-transform: capitalize !important;
+    font-weight: 600;
+    color: #0d494e;
+}
+
+/*------------------------------------------------------ HOMEWORK DETAIL SECTION*/
+.hw-heading{
+    text-transform: capitalize !important;
+    font-weight: 600;
+    color: #0d494e;
+}
+
+.hw-title{
+    text-transform: capitalize; 
+    color: #0d494e;
+}
+.hw-description{
+    height:30vh;
+}
+.hw-due-data{
+    color: #e93237;
+}
+.hw-container{
+    background-color: #c5c5c4 !important;
+    color: #0d494e;
+    padding: 0px !important;
+}
+/*------------------------------------------------------ HOMEWORK SECTION -VIEW BTN*/
+.view-btn{
+    color: green;
+    font-weight: 800;
+}
+/*------------------------------------------------------ YOUTUBE SEARCH*/
+.yt-s-cardheader{
+    background-color: #a3cfc2 !important;
+    color: #0d494e;
+    text-transform: capitalize;
+    font-size: medium;
+    text-align: left;
+}
+.yt-s-cardheader:hover{
+    background-color: #7cd0b7 !important;
+}
+
+.yt-s-cardbody:hover{
+    background-color: #7cd0b7 ;
+}
+.yt-s-cardbody{
+    color: #0d494e;
+    font-size: small;
+}
+/*------------------------------------------------------ TODO LIST PAGE*/
+.form-check{
+    text-align: left;
+}
+.form-check:hover{
+    font-weight: 600;
+}
+.todo-container{
+    background-color: #e79288 !important;
+    color: #0d494e;
+    padding: 0px !important; 
+}
+/*------------------------------------------------------ BOOK SEARCH PAGE*/
+
+.bookscardheader{
+    background-color: #a3cfc2 !important;
+    color: #0d494e !important;
+    text-transform: capitalize;
+    font-size: medium;
+    text-align: left;
+}
+.bookscardheader:hover{
+    background-color: #7cd0b7 !important;
+    color: #0d494e !important;
+
+}
+.bookscardheader{
+    color: #0d494e !important;
+    font-size: small;
+}
+.bookscardheader:hover{
+    background-color: #7cd0b7 ;
+    color: #0d494e !important;
+
+}
+/*------------------------------------------------------WIKIPEDIA SEARCH PAGE*/
+
+.custom-header:hover{
+    background-color: white !important;
+}
+.wiki-container{
+    color: #0d494e !important;
+}
+.wiki-container h2{
+    color: #0d494e !important;  
+}
+/*------------------------------------------------------CALCULATOR SEARCH PAGE*/
+
+.cal-container {
+    width: 250px;
+    height: 400px;
+    margin: 80px auto;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+ 
+    /* box-shadow is used to achieve Neumorphism 
+    by using a light shadow and a dark shadow*/
+    box-shadow: 5px 5px 10px #b6a9a9,
+        -5px -5px 10px #ffffff;
+}
+#display {
+    border: 1px solid white;
+    outline: none;
+    color: rgb(248, 245, 245);
+    text-align: right;
+    font-weight: 600;
+    padding: 15px;
+    margin: 30px 0 20px 0;
+    background: transparent;
+ 
+    /* Inset shadow gives the appearance that 
+      the element is being pressed into it.*/
+    box-shadow: inset 2px 2px 5px #babecc,
+        inset -1px -1px 5px #ffffff;
+}
+.cal-btn {
+    margin: 15px 0 0 5px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 50%;
+    color: white;
+    background-color: rgb(86, 84, 84);
+ 
+    /* box-shadow is used to achieve Neumorphism 
+    by using a light shadow and a dark shadow */
+    
+    display: inline-block;
+}
+.cal-btn:active {
+ 
+    /* When the button is pressed, the inset 
+    shadow provides the impression that the 
+    element is being pressed into it */
+    box-shadow: inset 1px 1px 1px #ebdddd,
+        inset -2px -2px 2px #dfcccc;
+}
+.cal-box {
+    width: 200px;
+    margin: 20px auto;
+}
+.clearButton {
+    color: white;
+    background-color: rgb(255, 188, 4);
+}
+ 
+.mathbutton {
+    color: white;
+    background-color: rgb(255, 188, 4);
+}
