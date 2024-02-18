@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.views import generic
+from django.contrib.auth.decorators import login_required
 from youtubesearchpython import VideosSearch
 from . forms import *
 import requests
@@ -19,6 +20,7 @@ def home (request):
 
 
 # ---------------------------------------------------------NOTES PAGE VIEWS
+@login_required
 def notes (request):
     '''
     View for Adding Notes and displaying success message.
@@ -41,7 +43,7 @@ def notes (request):
     context ={'notes':notes,'form':form}
     return render (request,"dashboard/notes.html",context)
 
-
+@login_required
 def delete_notes(request,pk=None):
     '''
     View for Deleting notes and displaying success message.
@@ -61,6 +63,7 @@ class notes_detail_view(generic.DetailView):
     template_name = 'dashboard/notes_detail.html' 
 
 # ---------------------------------------------------------HOMEWORKS PAGE VIEWS
+@login_required
 def homework (request):
     '''
     View for the Home Page and creating new homeworks.
@@ -70,7 +73,7 @@ def homework (request):
         form = Homeworkform(request.POST)
         if form.is_valid():
             try:
-                finished= request.POST['is_finished']
+                finished= request.POST.get('is_finished', False)
                 if finished == 'on':
                     finished = True
                 else:
@@ -86,7 +89,7 @@ def homework (request):
                 is_finished=finished
                 )
             homework.save()
-            form = Homeworkformform()
+            form = Homeworkform()
             messages.success(request,f"Home work added successfully!!!!")
 
     else:
@@ -104,19 +107,17 @@ def homework (request):
     return render (request,"dashboard/homework.html",context)
 
 
-
+@login_required
 def delete_homework(request,pk=None):
     '''
     View for Deleting homeworks and displaying success message.
-
-
     '''
     del_homework = Homework.objects.filter(id=pk) 
     del_homework.delete()
     messages.success(request,f"Home work deleted successfully!!!!")
     return redirect("/homeworks")
 
-
+@login_required
 def update_homework(request,pk=None):
     '''
     View for Updating the status of Homework done and displaying success message.
@@ -183,6 +184,7 @@ def youtube_search(request):
 
     
 # ---------------------------------------------------------TO-DO VIEWS
+@login_required
 def todo(request):
     '''
     View for the todopage
@@ -220,7 +222,7 @@ def todo(request):
                 'todo_form':form}
     return render (request,"dashboard/todo.html",context)
 
-
+@login_required
 def delete_todo_list(request,pk=None):
     '''
         View for Deleting todo list items and displaying success message.
@@ -230,6 +232,8 @@ def delete_todo_list(request,pk=None):
     messages.success(request,f"Item successfully deleted from To-Do List!!!!")
     return redirect("/todo")
 
+
+@login_required
 def update_todo_list(request,pk=None):
     '''
     View for Updating the status of items in ToDo list done and displaying success message
@@ -352,6 +356,7 @@ def calculator(request):
     return render(request,"dashboard/calculator.html")
 
 # ---------------------------------------------------------PROFILE VIEWS
+@login_required
 def profile(request):
     hw_data = Homework.objects.filter(is_finished=False,user=request.user)
     todo_data = Todo.objects.filter(is_completed=False,user=request.user)
@@ -373,3 +378,25 @@ def profile(request):
     }
 
     return render(request,"dashboard/profile.html",context)
+
+
+# ---------------------------------------------------------DELETE ACCOUNT VIEWS
+@login_required
+def del_acc_page(request):
+    return render(request,"dashboard/del_acc.html")
+
+@login_required
+def delete_account(request,pk=None):
+    '''
+    View for Deleting account and displaying success message.
+
+    '''
+    del_acc = User.objects.filter(username=request.user.username) 
+    del_acc.delete()
+    return render(request,'dashboard/acc_del_confirmation.html')
+    
+
+# ---------------------------------------------------------PASSWORD RESET VIEWS
+def password_reset(request):
+    return render(request,"account/password_reset.html")
+    

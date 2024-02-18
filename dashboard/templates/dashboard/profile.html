@@ -3,8 +3,8 @@
 {% load crispy_forms_tags%}
 {% block content %}
 <section class="text-center">
-    <h3>Welcome, {{ user}}</h3>
-    <br><hr>
+    <h3>Hello, {{ user}}</h3>
+    <hr><br>
     <div class="container">
         {% if not todo_done %}
         <h2>ToDos Left</h2>
@@ -44,14 +44,15 @@
             </tbody>
         </table>
         {% else %}
-        <h3>All To dos are completed!!!!</h3> 
+        <h4>All To dos are completed!!!!</h4> 
         <br><br>
         <a href="{% url 'todo'%}" class="btn btn-danger">Create To-Do List</a>
         {% endif %}
         <br><br>
-        <hr><br><br>
+        <hr><br>
         {% if not hw_done %}
-        <h3>Homeworks to be Completed</h3>
+        <h4>Homeworks to be Completed</h4>
+        <br>
         <table class="table table-striped table-hover">
             <thead>
                 <tr>
@@ -95,9 +96,10 @@
         <h3>All To homeworks are completed!!!!</h3>
         <br><br>
         <a href="{% url 'homeworks'%}" class="btn btn-danger"> Create Homeworks</a>
-        
+        <br><br><br>
         {% endif %}
     </div>
+    <br>
 </section>
 
 {% endblock content %}

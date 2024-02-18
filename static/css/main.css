@@ -426,3 +426,18 @@ td .form-check{
     color: white;
     background-color: rgb(255, 188, 4);
 }
+/*------------------------------------------------------DELETE ACCOUNT PAGE*/
+.del-container{
+    width:40%;
+    height: 30%;
+}
+.del-container.card-text p{
+    text-align: center;
+    margin-left: 0 !important; 
+}
+#del-card-header:hover{
+    background-color: #e93237 !important;
+}
+#signin:hover{
+ font-weight: 700 !important;
+}

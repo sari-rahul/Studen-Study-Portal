@@ -37,4 +37,10 @@ urlpatterns= [
 #--------------------------------------------------------------------------------url profile page
     path('profile',views.profile, name="profile"),
 
+#--------------------------------------------------------------------------------url Delete account page
+    path('del_acc_page',views.del_acc_page, name="del-acc-page"),
+    path('delete_account',views.delete_account, name="delete_account"), 
+#--------------------------------------------------------------------------------url reset password page
+    path('password_reset',views.password_reset, name="password-reset"),
+
 ]

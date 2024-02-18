@@ -21,7 +21,7 @@
         <br><br>
     </div>
 </div>
-<br><br>
+<br>
 <div class="container">
     <form method="POST">
         {% csrf_token %}
@@ -30,7 +30,7 @@
         </fieldset>
         {{ form|crispy  }}
         <div class="form-group">
-            <button href="" class="btn btn-outline-info" type="submit">
+            <button href="{% url 'notes' %}" class="btn btn-outline-info" type="submit">
                 Create
             </button>
         </div>

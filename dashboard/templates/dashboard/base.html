@@ -35,6 +35,7 @@
             <li class="nav-item">
               <a class="nav-link {% if '/' == request.path %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
+            {% if user.is_authenticated%}
             
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -57,9 +58,15 @@
                 <a class="dropdown-item" href="{% url 'calculator' %}">Calculator</a>
               </div>
             </li>
-            {% if user.is_authenticated%}
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                profile
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{% url 'profile' %}">Your Profile</a>
+                <a class="dropdown-item" href="{% url 'del-acc-page' %}">Delete Account</a>
+                <a class="dropdown-item" href="{% url 'account_reset_password' %}">Reset Password</a>
             </li>
             <li class="nav-item">
               <a class="nav-link {% if request.path == logout_url %}active{% endif %}" 

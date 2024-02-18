@@ -10,12 +10,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <br><br>
+            <br>
             <h3>{% trans "Sign In" %}</h3>
             <br><br>
-            <p>{% blocktrans %}Welcome back to the code|star blog. To leave a comment or like a post, please log in. If
-                you
-                have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
+            <p>{% blocktrans %}Welcome back to the Student Study Portal. To add Notes, Homeworks or to Search Something,
+                please log in. If you have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a>
                 first.{% endblocktrans %}</p>
         </div>
     </div>
@@ -28,6 +27,8 @@
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
                 <button class="btn btn-signup right" type="submit">{% trans "Sign In" %}</button>
+                <br>
+                <a href="{% url 'account_reset_password' %}">Forgot Password ??</a>
             </form>
         </div>
     </div>
