@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.views import generic
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 from youtubesearchpython import VideosSearch
 from . forms import *
 import requests
@@ -399,4 +400,12 @@ def delete_account(request,pk=None):
 # ---------------------------------------------------------PASSWORD RESET VIEWS
 def password_reset(request):
     return render(request,"account/password_reset.html")
-    
+
+def password_reset_email(request):
+    send_mail(
+        subject='Password Change for your Student Study Portal',
+        message='You have received this email because someone asked for Password change for your account,If you want to change the Password Click the link below.',
+        from_email='rahulmulakkal@gmail.com',
+        recepient_list=['sarisivadas93@gmail.com'],
+    )
+    return HttpResponse('Message sent!!')   
