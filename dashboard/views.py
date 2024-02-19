@@ -35,7 +35,7 @@ def notes (request):
                 description=request.POST['description'])
             notes.save()
             form = Notesform()
-        messages.success(request,f"Notes added successfully from {request.user.username}")
+        messages.success(request,f"Notes added successfully from {request.user.username}' account")
 
     else:
         form = Notesform()
