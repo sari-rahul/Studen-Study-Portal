@@ -5,8 +5,9 @@
 {% block head_title %}{% trans "Signup" %}{% endblock head_title %}
 
 {% block content %}
+<div class="container">
 <div class="row">
-  <div class="col-md-6 mt-2s offset-md-2">
+  <div class="col-md-8 mt-3 offset-md-2">
     <h3>{% trans "Sign Up" %}</h3>
     <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}" id="signin">sign in</a>.{% endblocktrans %}</p>
   </div>
@@ -22,6 +23,7 @@
         <button  class="btn btn-signup right"type="submit">{% trans "Sign Up" %} &raquo;</button>
       </form>
   </div>
+</div>
 </div>
 
 {% endblock content %}
