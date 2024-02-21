@@ -45,6 +45,8 @@ def notes (request):
     context ={'notes':notes,'form':form}
     return render (request,"dashboard/notes.html",context)
 
+
+
 @login_required
 def delete_notes(request,pk=None):
     '''
@@ -63,6 +65,8 @@ class notes_detail_view(generic.DetailView):
     '''
     model = Note
     template_name = 'dashboard/notes_detail.html' 
+
+
 
 # ---------------------------------------------------------HOMEWORKS PAGE VIEWS
 @login_required
@@ -109,6 +113,7 @@ def homework (request):
     return render (request,"dashboard/homework.html",context)
 
 
+
 @login_required
 def delete_homework(request,pk=None):
     '''
@@ -118,6 +123,8 @@ def delete_homework(request,pk=None):
     del_homework.delete()
     messages.success(request,f"Home work deleted successfully!!!!")
     return redirect("/homeworks")
+
+
 
 @login_required
 def update_homework(request,pk=None):

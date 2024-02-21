@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 # ---------------------------------------------------------NOTES MODEL
 class Note(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE,null=True, blank=True)
     title = models.CharField(max_length=200)
     description = models.TextField()
 
@@ -14,7 +14,7 @@ class Note(models.Model):
 
 # ---------------------------------------------------------HOMEWORK MODEL
 class Homework(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE,null=True, blank=True)
     subject = models.CharField(max_length=50)
     title = models.CharField(max_length=200)
     description = models.TextField()
@@ -26,7 +26,7 @@ class Homework(models.Model):
 
 # ---------------------------------------------------------To-Do MODEL
 class Todo(models.Model):
-    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE,null=True, blank=True)
     title = models.CharField(max_length=200)
     is_completed = models.BooleanField(default=False)
 
