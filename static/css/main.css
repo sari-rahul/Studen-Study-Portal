@@ -12,13 +12,15 @@ html,
 body {
     max-width: 100%;
     overflow-x: hidden;
-    height: 100%;
+    height: 100vh;
     width: 100%;
 }
 
 body {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.5));
     overflow-x: hidden;
+    height: 100vh;
+
     background-repeat: no-repeat;
 }
 .example::-webkit-scrollbar {
@@ -28,6 +30,7 @@ body {
 /*------------------------------------------------------ MAIN*/
 main {
     font-family: Barlow, Quicksand, Rubik, sans-serif, serif, 'Times New Roman', Times, serif !important;
+    min-height: 70vh;
 }
 /*------------------------------------------------------ USERNAME*/
 .username{
@@ -180,7 +183,7 @@ legend{
 footer {
     font-family: Rubik, sans-serif, serif, 'Times New Roman', Times, serif;
     background-color: #0d494e;
-    height:4rem;
+    height:3.5rem;
     width: 100%;
     color: white;
 }
@@ -441,3 +444,33 @@ td .form-check{
 #signin:hover{
  font-weight: 700 !important;
 }
+@media screen and (max-width:800px){
+    .hw-container thead{
+        display :none;
+    }
+    .hw-container tbody{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 4px;
+        color:#0d494e;
+        
+    }
+    .hw-container tbody tr td{
+        display:block;
+        border: 0;
+        
+    }
+    .hw-container tbody td{
+        padding: 4px;
+        font-weight: bold;
+    }
+    .hw-container tbody tr{
+        width: calc(50% - 8px);
+        position: relative;
+        border: 1px solid #e93237 ;
+        padding: 8px;
+        margin: 4px;
+        background-color: #e79288;
+    }
+}
+    
