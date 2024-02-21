@@ -31,11 +31,12 @@ def notes (request):
         form = Notesform(request.POST)
         if form.is_valid():
             notes = Note(
-                user=request.user,title=request.POST['title'],
+                user=request.user,
+                title=request.POST['title'],
                 description=request.POST['description'])
             notes.save()
             form = Notesform()
-        messages.success(request,f"Notes added successfully from {request.user.username}' account")
+        messages.success(request,f"Notes added successfully from {request.user.username} account")
 
     else:
         form = Notesform()
