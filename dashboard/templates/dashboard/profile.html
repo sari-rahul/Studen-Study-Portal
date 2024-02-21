@@ -3,11 +3,12 @@
 {% load crispy_forms_tags%}
 {% block content %}
 <section class="text-center">
-    <h3>Hello, {{ user}}</h3>
+    <h3 id="profile-username">Hello, {{ user}}</h3>
     <hr><br>
     <div class="container">
         {% if not todo_done %}
-        <h2>ToDos Left</h2>
+        <h4>ToDos Left</h4>
+        <br>
         <table class="table table-striped table-hover">
             <thead>
                 <tr>

@@ -444,6 +444,13 @@ td .form-check{
 #signin:hover{
  font-weight: 700 !important;
 }
+/*------------------------------------------------------PROFILE PAGE*/
+
+#profile-username{
+    text-transform: capitalize;
+}
+/*------------------------------------------------------MEDIA QUERIES*/
+
 @media screen and (max-width:800px){
     .hw-container thead{
         display :none;
