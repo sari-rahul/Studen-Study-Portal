@@ -334,21 +334,19 @@ def wiki(request):
     if request.method == 'POST':
         text = request.POST['search_text']
         form = Commonform(request.POST)
-        search = wikipedia.page(text)
-        context = {
-            'form': form,
-            'title':search.title,
-            'link':search.url,
-            'description':search.summary
-        }
-        return render(request,"dashboard/wiki.html",context)
     else:
+        text = 'Germany'
         form = Commonform
-        context= {
-        'form':form
+
+    search = wikipedia.page(text)    
+    context= {
+        'form': form,
+        'title':search.title,
+        'link':search.url,
+        'description':search.summary
         }
     return render(request,"dashboard/wiki.html",context)
-
+   
 # ---------------------------------------------------------CALCULATOR PAGE VIEW
 def calculator(request):
     
