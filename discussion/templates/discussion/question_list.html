@@ -1,0 +1,10 @@
+{% extends 'discussion/base.html' %} 
+{% block content%}
+
+<h1>Questions list</h1>
+    {% for question in object_list %}
+    <h2>{{question.title}}</h2>
+    <p>{{question.content}}</p>
+    <p>Author: {{question.author}}</p>
+    {% endfor %}
+{% endblock%}

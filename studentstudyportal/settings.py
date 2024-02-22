@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'dashboard',
+    'discussion',
     'crispy_forms',
     'crispy_bootstrap5',
 ]
