@@ -131,8 +131,6 @@ def delete_homework(request,pk=None):
 def update_homework(request,pk=None):
     '''
     View for Updating the status of Homework done and displaying success message.
-
-
     '''
     homework = Homework.objects.get(id=pk) 
     if homework.is_finished == True:
@@ -399,37 +397,9 @@ def delete_account(request,pk=None):
 
     '''
     del_acc = User.objects.filter(username=request.user.username) 
-
     del_acc.delete()
     return render(request,'dashboard/acc_del_confirmation.html')
-"""
-@login_required
-def delete_account(request,pk=None):
-    '''
-     View for Deleting account and displaying success message.
-    '''
-    if request.method == 'POST':
-        form = Passwordform(request.POST)
-        del_acc = User.objects.filter(id=id)
-        password_given = request.POST.get('password') 
-        username_given = request.POST.get('username') 
-        username = request.user.username
-        password = request.user.password
-        user = authenticate(username=username_given, password=password_given)
-        if user is not None:
-            del_acc.delete()
-            print('acc deleted')
-            return render(request,'dashboard/acc_del_confirmation.html')
-        else:
-            messages.info(request,f"Password Incorrect")
-            return render(request,'dashboard/home.html')
-    else:
-        form = Passwordform
-        context = {
-            'form':form,
-        }
-        return render(request,"dashboard/del_acc.html",context )"""
-        
+
 
 # ---------------------------------------------------------PASSWORD RESET VIEWS
 def password_reset(request):

@@ -11,15 +11,10 @@
          </div>
         <div class="card-body">
           <br>
-          <h5 class="card-title">Please enter your Password !!!!</h5>
-          <form action="" method="post">
-            {% csrf_token%}
-            {{form|crispy}}
-            <a href=" url'delete-account"><input type="submit" value="Delete Your Account"></a>
-          </form>
+          <h5 class="card-title">Are you Sure, You want to Delete the Account !!!!</h5>
           <br>
-          <a href="{% url 'delete-account'  %}" class="btn btn-danger"> Delete Your Account</a>
-          <a href="{% url 'home' %}" class="btn btn-success"> Go Back</a>
+          <a href="{% url 'delete-account'  %}" class="btn btn-danger"> Yes ,I am sure </a>
+          <a href="{% url 'home' %}" class="btn btn-success"> No,I was mistaken</a>
         </div>
     </div>
     <br><br>        
