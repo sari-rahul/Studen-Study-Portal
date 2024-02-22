@@ -24,7 +24,7 @@
                 <th scope="row">{{forloop.counter}}</th>
                 <td>{{homework.subject}}</td>
                 <td>{{homework.title}}</td>
-                <td>{{homework.description|slice:"0:30"}}</td>
+                <td>{{homework.description|slice:"0:10"}}</td>
                 <td>{{homework.due_date}}</td>
                 <td>
                     <a href="{% url 'update-homework' homework.id %}">

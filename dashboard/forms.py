@@ -27,3 +27,6 @@ class Todoform(forms.ModelForm):
 class Commonform(forms.Form):
     search_text = forms.CharField(max_length=100,label='Enter your search here')
 
+class Passwordform(forms.Form):
+    password = forms.CharField(max_length=100,label='Password')
+    username = forms.CharField(max_length=100,label='Username')

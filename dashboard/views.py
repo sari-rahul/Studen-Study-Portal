@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.views import generic
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
+from django.contrib.auth import authenticate
 from youtubesearchpython import VideosSearch
 from . forms import *
 import requests
@@ -385,7 +386,8 @@ def profile(request):
     return render(request,"dashboard/profile.html",context)
 
 
-# ---------------------------------------------------------DELETE ACCOUNT VIEWS
+# ---------------------------------------------------------DELETE ACCOUNT VIEW
+
 @login_required
 def del_acc_page(request):
     return render(request,"dashboard/del_acc.html")
@@ -400,7 +402,34 @@ def delete_account(request,pk=None):
 
     del_acc.delete()
     return render(request,'dashboard/acc_del_confirmation.html')
-    
+"""
+@login_required
+def delete_account(request,pk=None):
+    '''
+     View for Deleting account and displaying success message.
+    '''
+    if request.method == 'POST':
+        form = Passwordform(request.POST)
+        del_acc = User.objects.filter(id=id)
+        password_given = request.POST.get('password') 
+        username_given = request.POST.get('username') 
+        username = request.user.username
+        password = request.user.password
+        user = authenticate(username=username_given, password=password_given)
+        if user is not None:
+            del_acc.delete()
+            print('acc deleted')
+            return render(request,'dashboard/acc_del_confirmation.html')
+        else:
+            messages.info(request,f"Password Incorrect")
+            return render(request,'dashboard/home.html')
+    else:
+        form = Passwordform
+        context = {
+            'form':form,
+        }
+        return render(request,"dashboard/del_acc.html",context )"""
+        
 
 # ---------------------------------------------------------PASSWORD RESET VIEWS
 def password_reset(request):

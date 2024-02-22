@@ -39,7 +39,8 @@ urlpatterns= [
 
 #--------------------------------------------------------------------------------url Delete account page
     path('del_acc_page',views.del_acc_page, name="del-acc-page"),
-    path('delete_account',views.delete_account, name="delete_account"), 
+    path('delete_account',views.delete_account, name="delete-account"), 
+    #path('delete_account/<int:pk>',views.delete_account, name="delete-account"), 
 #--------------------------------------------------------------------------------url reset password page
     path('password_reset',views.password_reset, name="password-reset"),
     path('password_reset_email',views.password_reset_email, name="password-reset-email"),
