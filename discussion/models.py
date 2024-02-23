@@ -14,11 +14,12 @@ class Question(models.Model):
 
 class Answer(models.Model):
     question = models.ForeignKey(
-        Question, on_delete=models.CASCADE, related_name="comments")
+        Question, on_delete=models.CASCADE, related_name="answers")
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="commenter")
+        User, on_delete=models.CASCADE, related_name="answeredperson")
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
-
+    class Meta:
+        ordering = ["-created_on"]
     def __str__(self):
-        return f"Comment :- {self.body} by {self.author}"
+        return f"Answered :- {self.body} by {self.author}"

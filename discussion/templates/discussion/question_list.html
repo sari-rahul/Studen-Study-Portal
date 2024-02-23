@@ -1,10 +1,55 @@
 {% extends 'discussion/base.html' %} 
+{% load static%}
 {% block content%}
 
-<h1>Questions list</h1>
-    {% for question in object_list %}
-    <h2>{{question.title}}</h2>
-    <p>{{question.content}}</p>
-    <p>Author: {{question.author}}</p>
-    {% endfor %}
+
+<!-- index.html content starts here -->
+
+<div class="container-fluid">
+    <div class="row">
+
+         <!--Blog Entries Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for question in question_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <p class="author">Author: {{ question.author }}</p>
+                            <a href="{% url 'a-discussion-form' question.title %}" class="question-link">
+                                <h2 class="card-title">{{ question.title }}</h2>
+                            </a>
+
+                            <hr/>
+                            <p class="comment_num">No. Of Comments: {{answer_count}}</p>
+                            <p class="card-text text-muted h6">{{ question.created_on}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+                {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+            <li>
+            <a href="?page={{ page_obj.previous_page_number }}"
+            class="page-link">&laquo; PREV</a>
+            </li>
+            {% endif %}
+            {% if page_obj.has_next %}
+            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
 {% endblock%}

@@ -1,0 +1,83 @@
+{% extends 'discussion/base.html' %}
+{% load crispy_forms_tags%} 
+{% block content %}
+{% load static %}
+
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <!-- Post title goes in these h1 tags -->
+                <h1 class="question-title">{{ question.title }}</h1>
+                <!-- Post author goes before the | the post's created date goes after -->
+                <p class="question-subtitle">{{ question.author }} | {{ question.created_on }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col mb-4  top">        
+            <h6>{{ question.content}}</h6>
+        </div>
+    </div>
+</div>
+<!-- Displaying count of comments -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <strong class="text-secondary">
+                <i class="far fa-comments"></i> {{ answer_count }}
+            </strong>
+        </div>
+        <div class="col-12">
+            <hr>
+        </div>
+    </div>
+  <!-- Displaying Comments -->
+    <div class="row">
+        <div class="col-md-6  mt-3 ">
+            <h3>Answers:</h3>
+        <div>
+            {% for answer in answers %}
+                <div class="p-2 comments">
+                    <p class="font-weight-bold">
+                    {{ answer.author }}
+                    <span class="font-weight-normal">
+                    {{ answer.created_on }}
+                    </span> wrote:
+                    </p>
+                    <div id="answer{{ answer.id }}">
+                    {{ answer.body | linebreaks }}
+                    </div>
+                </div>
+                <hr>
+            <!-- Our for loop ends here -->
+            {% endfor %}
+        </div>
+        </div>
+
+        <!-- Creating New Answers -->
+        <div class="col-md-6 mb-4  mt-3">
+            <div class="card-body">
+                {% if user.is_authenticated %}
+                <h3>Do you have the answer:</h3>
+                <p>Answering as: {{ user.username }}</p>
+                <form id="AnswerForm" method="post"
+                    style="margin-top: 1.3em;">
+                    {{ answer_form | crispy }}
+                    {% csrf_token %}
+                    <button id="submitButton" type="submit"
+                    class="btn btn-signup btn-lg">Submit</button>
+                </form>
+                {% else %}
+                <p>Log in to write an Answer</p>
+                {% endif %}
+            </div>
+        </div>
+</div>
+</div>
+</div>
+
+
+{% endblock content %}

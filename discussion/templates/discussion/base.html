@@ -26,6 +26,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
   <link rel="manifest" href="/static/favicon/site.webmanifest">
+  <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -46,38 +48,6 @@
               <a class="nav-link {% if '/' == request.path %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
             {% if user.is_authenticated%}
-            
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                services
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{% url 'notes' %}">Notes</a>
-                <a class="dropdown-item" href="{% url 'homeworks' %}">Homeworks</a>
-                <div class="dropdown-divider"></div>
-
-                <a class="dropdown-item" href="{% url 'books' %}">Books</a>
-                <a class="dropdown-item" href="{% url 'todo' %}">To-Do</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{% url 'youtube_search' %}">You Tube</a>
-                <a class="dropdown-item" href="{% url 'dictionary' %}">Dictionary</a>
-                <div class="dropdown-divider"></div>
-
-                <a class="dropdown-item" href="{% url 'wiki' %}">Wikipedia</a>
-                <a class="dropdown-item" href="{% url 'calculator' %}">Calculator</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                profile
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{% url 'profile' %}">Your Profile</a>
-                <a class="dropdown-item" href="{% url 'del-acc-page' %}">Delete Account</a>
-                <a class="dropdown-item" href="{% url 'account_reset_password' %}">Reset Password</a>
-            </li>
             <li class="nav-item">
               <a class="nav-link {% if request.path == logout_url %}active{% endif %}" 
               aria-current="page" href="{% url 'account_logout' %}">Logout</a>
