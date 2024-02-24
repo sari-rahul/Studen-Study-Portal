@@ -1,10 +1,12 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.views import generic
+from django.contrib import messages
+from .models import Question,Answer
 from .forms import AnswerForm
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404,reverse
 
-from .models import Question ,Answer
+
 # Create your views here.
 
 class discussion (generic.ListView):
@@ -15,6 +17,9 @@ class discussion (generic.ListView):
 
 
 def a_discussion_form(request, title):
+    """
+    Discussion forum single page view
+    """
     queryset = Question.objects.all()
     question = get_object_or_404(queryset, title=title)
     answers = question.answers.all().order_by("-created_on")
@@ -37,36 +42,43 @@ def a_discussion_form(request, title):
                "answer_count":answer_count,}
     return render(request,"discussion/a_discussion_form.html", context)
 
-    """def post_detail(request, slug):
-    
 
-    queryset = Post.objects.filter(status=1)
-    post = get_object_or_404(queryset, slug=slug)
-    comments = post.comments.all().order_by("-created_on")
-    comment_count = post.comments.filter(approved=True).count()
+
+def answer_edit(request, title, answer_id):
+    """
+    view to edit answers
+    """
     if request.method == "POST":
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.author = request.user
-            comment.post = post
-            comment.save()
-            messages.add_message(
-            request, messages.SUCCESS,
-            'Comment submitted and awaiting approval'
-    )
+
+        queryset = Question.objects.all()
+        question = get_object_or_404(queryset, title=title)
+
+        answer = get_object_or_404(Answer, pk=answer_id)
+        answer_form = AnswerForm(data=request.POST, instance=answer)
+
+        if answer_form.is_valid() and answer.author == request.user:
+            answer = answer_form.save()
+            answer.question = question
+            answer.save()
+            messages.add_message(request, messages.SUCCESS, 'Answer Updated!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating Answers!')
+
+    return HttpResponseRedirect(reverse('a-discussion-form', args=[title]))
 
 
-    comment_form = CommentForm()
+def answer_delete(request, title, answer_id):
+    """
+    view to delete answer
+    """
+    queryset = Question.objects.all()
+    question = get_object_or_404(queryset, title=title)
+    answer = get_object_or_404(Answer, pk=answer_id)
 
+    if answer.author == request.user:
+        answer.delete()
+        messages.add_message(request, messages.SUCCESS, 'Answer deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You can only delete your own Answers!')
 
-    return render(
-        request,
-        "blog/post_detail.html",
-        {
-            "post": post,
-            "comments": comments,
-            "comment_count": comment_count,
-            "comment_form": comment_form,
-        }
-    )"""
+    return HttpResponseRedirect(reverse('a-discussion-form', args=[title]))

@@ -22,7 +22,7 @@
         </div>
     </div>
 </div>
-<!-- Displaying count of comments -->
+<!-- Displaying count of answers -->
 <div class="container">
     <div class="row">
         <div class="col-md-6">
@@ -34,15 +34,15 @@
             <hr>
         </div>
     </div>
-  <!-- Displaying Comments -->
-    <div class="row">
-        <div class="col-md-6  mt-3 ">
-            <h3>Answers:</h3>
+<!-- Displaying Answers -->
+<div class="row">
+    <div class="col-md-6  mt-3 ">
+        <h3>Answers:</h3>
         <div>
             {% for answer in answers %}
                 <div class="p-2 comments">
                     <p class="font-weight-bold">
-                    {{ answer.author }}
+                    {{ answer.author }} on
                     <span class="font-weight-normal">
                     {{ answer.created_on }}
                     </span> wrote:
@@ -50,34 +50,62 @@
                     <div id="answer{{ answer.id }}">
                     {{ answer.body | linebreaks }}
                     </div>
+                    {% if user.is_authenticated and answer.author == user %}
+                    <button class="btn btn-delete" answer_id="{{answer.id }}">Delete</button>
+                    <button class="btn btn-edit"  answer_id="{{ answer.id }}">Edit</button>
+                    {% endif %}
                 </div>
                 <hr>
             <!-- Our for loop ends here -->
             {% endfor %}
         </div>
-        </div>
+    </div>
 
-        <!-- Creating New Answers -->
-        <div class="col-md-6 mb-4  mt-3">
-            <div class="card-body">
-                {% if user.is_authenticated %}
-                <h3>Do you have the answer:</h3>
-                <p>Answering as: {{ user.username }}</p>
-                <form id="AnswerForm" method="post"
-                    style="margin-top: 1.3em;">
-                    {{ answer_form | crispy }}
-                    {% csrf_token %}
-                    <button id="submitButton" type="submit"
-                    class="btn btn-signup btn-lg">Submit</button>
-                </form>
-                {% else %}
-                <p>Log in to write an Answer</p>
-                {% endif %}
-            </div>
-        </div>
+<!-- Creating New Answers -->
+<div class="col-md-6 mb-4  mt-3">
+    <div class="card-body">
+    {% if user.is_authenticated %}
+        <h3>Do you have the answer:</h3>
+        <p>Answering as: {{ user.username }}</p>
+        <form id="AnswerForm" method="post"
+            style="margin-top: 1.3em;">
+            {{ answer_form | crispy }}
+            {% csrf_token %}
+            <button id="submitButton" type="submit"
+            class="btn btn-signup btn-lg">Submit</button>
+        </form>
+    {% else %}
+        <p>Log in to write an Answer</p>
+    {% endif %}
+    </div>
 </div>
 </div>
 </div>
-
+<!-- Delete confirmation modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1"
+  aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"
+          id="deleteModalLabel">Delete Answer?</h5>
+        <button type="button" class="btn-close"
+          data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete the Answer?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"
+          data-dismiss="modal">Close</button>
+        <a id="deleteConfirm" href="#" class="btn
+          btn-danger">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock content %}
+{% block extras %}
+<script src="{% static 'js/answers.js' %}"></script>
+{% endblock %}
