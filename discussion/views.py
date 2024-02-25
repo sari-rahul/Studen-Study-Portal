@@ -3,10 +3,9 @@ from django.http import HttpResponseRedirect
 from django.views import generic
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import get_object_or_404,reverse
-from .models import Question,Answer
-from .forms import AnswerForm,QuestionForm
-
+from django.shortcuts import get_object_or_404, reverse
+from .models import Question, Answer
+from .forms import AnswerForm, QuestionForm
 
 
 # Create your views here.
@@ -15,7 +14,6 @@ class discussion (generic.ListView):
     queryset = Question.objects.all().order_by("-created_on")
     paginate_by = 6
     template_name = "discussion/question_list.html"
-
 
 
 @login_required
@@ -31,17 +29,16 @@ def ask_a_question(request):
                 title=request.POST['title'],
                 content=request.POST['content'])
             question.save()
-            messages.add_message(
-            request, messages.SUCCESS,
-            'Question submitted successfully!!')
+            messages.add_message(request, messages.SUCCESS,
+                                 'Question submitted successfully!!')
     else:
         question_form = QuestionForm()
 
     question = Question.objects.filter(author=request.user.id)
     context = {"form": question_form,
-                "question":question,
+               "question": question,
                }
-    return render(request,"discussion/ask_a_question.html", context)
+    return render(request, "discussion/ask_a_question.html", context)
 
 
 def a_discussion_form(request, title):
@@ -59,16 +56,15 @@ def a_discussion_form(request, title):
             answer.author = request.user
             answer.question = question
             answer.save()
-            messages.add_message(
-            request, messages.SUCCESS,
-            'Answer submitted successfully!!')
+            messages.add_message(request, messages.SUCCESS,
+                                 'Answer submitted successfully!!')
 
     answer_form = AnswerForm()
     context = {"answer_form": answer_form,
                "question": question,
                "answers": answers,
-               "answer_count":answer_count,}
-    return render(request,"discussion/a_discussion_form.html", context)
+               "answer_count": answer_count, }
+    return render(request, "discussion/a_discussion_form.html", context)
 
 
 @login_required
@@ -90,10 +86,11 @@ def answer_edit(request, title, answer_id):
             answer.save()
             messages.add_message(request, messages.SUCCESS, 'Answer Updated!')
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating Answers!')
+            messages.add_message(request, messages.ERROR,
+                                 'Error updating Answers!')
 
     return HttpResponseRedirect(reverse('a-discussion-form', args=[title]))
-    
+
 
 @login_required
 def answer_delete(request, title, answer_id):
@@ -108,6 +105,7 @@ def answer_delete(request, title, answer_id):
         answer.delete()
         messages.add_message(request, messages.SUCCESS, 'Answer deleted!')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own Answers!')
+        messages.add_message(request, messages.ERROR,
+                             'You can only delete your own Answers!')
 
     return HttpResponseRedirect(reverse('a-discussion-form', args=[title]))
