@@ -25,9 +25,6 @@ urlpatterns= [
 #--------------------------------------------------------------------------------url books page
     path('books',views.books, name="books"),
 
-#--------------------------------------------------------------------------------url dictionary page
-    path('dictionary',views.dictionary, name="dictionary"),
-
 #--------------------------------------------------------------------------------url wikipedia page
     path('wiki',views.wiki, name="wiki"),
 

@@ -66,18 +66,19 @@
       </a>
     </div>
     <div class="col-md-3">
-      {% if user.is_authenticated %}
-      <a href="{% url 'todo' %}">
+      <!--{% if user.is_authenticated %}
+      <a href="{% url 'discussion' %}">
       {% else %}
       <a href="{% url 'account_signup' %}">
-      {% endif %} 
+      {% endif %}--> 
+      <a href="{% url 'discussion' %}">
         <div class="card">
-          <img class="card-img-top" src="{% static 'images/todo.jpg' %}" alt="Todo image">
+          <img class="card-img-top" src="{% static 'images/focus-group-discussions.jpg' %}" alt="discussion image">
           <div class="card-body">
             <h5 class="card-title ">
-              To Do
+              Discussions
             </h5>
-            Add your to-do lists for your day and remove them as you finish
+            Having doubts and want to discuss with other People? Register in Discussion Forum and Ask your Questions
           </div>
         </div>
       </a>
@@ -104,18 +105,17 @@
     </div>
     <div class="col-md-3">
       {% if user.is_authenticated %}
-      <a href="{% url 'dictionary' %}">
+      <a href="{% url 'todo' %}">
       {% else %}
       <a href="{% url 'account_signup' %}">
       {% endif %} 
         <div class="card">
-          <img class="card-img-top" src="{% static 'images/dictionary1.jpg' %}" alt="Dictionary image">
+          <img class="card-img-top" src="{% static 'images/todo.jpg' %}" alt="Todo image">
           <div class="card-body">
             <h5 class="card-title ">
-              Dictionary
+              To-Do
             </h5>
-            A vocabulary from a book is troubling you? No problem, enter the word, and the meaning will be displayed
-            almost instantaneously.
+            Create yout to-do list and Remove them as you finish it.
           </div>
         </div>
       </a>

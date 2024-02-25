@@ -8,4 +8,6 @@ urlpatterns = [
          views.answer_edit, name='answer-edit'),
     path('a_discussion_form/<title>/delete_answer/<int:answer_id>',
          views.answer_delete, name='answer-delete'),
+    path('ask_a_question', views.ask_a_question, name='ask-a-question'),
+     
 ]

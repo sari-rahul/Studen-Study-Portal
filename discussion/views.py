@@ -2,18 +2,46 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.views import generic
 from django.contrib import messages
-from .models import Question,Answer
-from .forms import AnswerForm
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404,reverse
+from .models import Question,Answer
+from .forms import AnswerForm,QuestionForm
+
 
 
 # Create your views here.
 
 class discussion (generic.ListView):
-    queryset = Question.objects.all().order_by("created_on")
+    queryset = Question.objects.all().order_by("-created_on")
     paginate_by = 6
     template_name = "discussion/question_list.html"
 
+
+
+@login_required
+def ask_a_question(request):
+    """
+    A form to ask Questions
+    """
+    if request.method == "POST":
+        question_form = QuestionForm(data=request.POST)
+        if question_form.is_valid():
+            question = Question(
+                author=request.user,
+                title=request.POST['title'],
+                content=request.POST['content'])
+            question.save()
+            messages.add_message(
+            request, messages.SUCCESS,
+            'Question submitted successfully!!')
+    else:
+        question_form = QuestionForm()
+
+    question = Question.objects.filter(author=request.user.id)
+    context = {"form": question_form,
+                "question":question,
+               }
+    return render(request,"discussion/ask_a_question.html", context)
 
 
 def a_discussion_form(request, title):
@@ -43,7 +71,7 @@ def a_discussion_form(request, title):
     return render(request,"discussion/a_discussion_form.html", context)
 
 
-
+@login_required
 def answer_edit(request, title, answer_id):
     """
     view to edit answers
@@ -65,8 +93,9 @@ def answer_edit(request, title, answer_id):
             messages.add_message(request, messages.ERROR, 'Error updating Answers!')
 
     return HttpResponseRedirect(reverse('a-discussion-form', args=[title]))
+    
 
-
+@login_required
 def answer_delete(request, title, answer_id):
     """
     view to delete answer

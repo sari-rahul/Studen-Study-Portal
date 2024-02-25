@@ -449,6 +449,65 @@ td .form-check{
 #profile-username{
     text-transform: capitalize;
 }
+/*------------------------------------------------------DISCUSSION-DASHBOARD PAGE*/
+
+.forum-card{
+    color:#e93237;
+}
+.author{
+    text-transform: capitalize;
+}
+.page-link{
+    background-color:#e79288;
+    color: #0d494e;
+    font-weight: 600;
+    border:1px solid #0d494e;
+    border-radius: 4px;
+}
+.page-link:hover{
+    background-color:#88c9cf;
+    color: #061e21;
+    border:1px solid #e93237;
+}
+
+/*------------------------------------------------------A DISCUSSION FORUM PAGE*/
+.question-title{
+    color: #e93237;
+}
+.question-subtitle{
+    font-weight: 600;
+}
+.question-content{
+    font-size: larger;
+}
+.answer-author{
+    font-weight: 600;
+}
+.btn-delete{
+    background-color: #e93237;
+    color:white;
+}
+.btn-delete:hover{
+    color:#e93237;
+    background-color:white
+}
+.btn-edit{
+    background-color:#0e9ca9;
+    color:white;
+}
+.btn-edit:hover{
+    background-color: white;
+    color:#0e9ca9;
+}
+.btn-submit{
+    background-color: #05454b;
+    color:white;
+
+}
+.btn-submit:hover{
+    background-color: white;
+    color:#05454b;
+}
 /*------------------------------------------------------MEDIA QUERIES*/
 
 @media screen and (max-width:800px){

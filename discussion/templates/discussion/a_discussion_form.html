@@ -15,10 +15,11 @@
         </div>
     </div>
 </div>
+<br><br>
 <div class="container">
     <div class="row">
         <div class="col mb-4  top">        
-            <h6>{{ question.content}}</h6>
+            <h6 class="question-content">{{ question.content}}</h6>
         </div>
     </div>
 </div>
@@ -37,11 +38,11 @@
 <!-- Displaying Answers -->
 <div class="row">
     <div class="col-md-6  mt-3 ">
-        <h3>Answers:</h3>
+        <h3 class="question-title">Answers:</h3>
         <div>
             {% for answer in answers %}
-                <div class="p-2 comments">
-                    <p class="font-weight-bold">
+                <div class="p-2 answers">
+                    <p class="answer-author">
                     {{ answer.author }} on
                     <span class="font-weight-normal">
                     {{ answer.created_on }}
@@ -72,10 +73,10 @@
             {{ answer_form | crispy }}
             {% csrf_token %}
             <button id="submitButton" type="submit"
-            class="btn btn-signup btn-lg">Submit</button>
+            class="btn btn-submit btn-lg">Submit</button>
         </form>
     {% else %}
-        <p>Log in to write an Answer</p>
+        <h5>Please <a href="{% url 'account_signup' %}"><span class="question-title">log in</span></a> to write an Answer.</h5>
     {% endif %}
     </div>
 </div>

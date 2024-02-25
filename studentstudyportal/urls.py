@@ -23,5 +23,5 @@ urlpatterns = [
     path('',include('dashboard.urls')),
     path('accounts/', include("allauth.urls")),
     path('admin/', admin.site.urls),
-    path('discussion/', include('discussion.urls')),
+    path('discussion/', include('discussion.urls'),name="discussion-urls"),
 ]
