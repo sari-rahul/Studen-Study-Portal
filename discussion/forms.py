@@ -1,4 +1,4 @@
-from .models import Answer,Question
+from .models import Answer, Question
 from django import forms
 
 
@@ -11,4 +11,4 @@ class AnswerForm(forms.ModelForm):
 class QuestionForm(forms.ModelForm):
     class Meta:
         model = Question
-        fields = ['title','content',]
+        fields = ['title', 'content']

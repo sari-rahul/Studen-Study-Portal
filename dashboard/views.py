@@ -286,7 +286,8 @@ def books(request):
             'count': answer['items'][i]['volumeInfo'].get('pageCount'),
             'categories': answer['items'][i]['volumeInfo'].get('categories'),
             'rating': answer['items'][i]['volumeInfo'].get('pageRating'),
-            'thumbnail': answer['items'][i]['volumeInfo'].get('imageLinks').get('thumbnail'),
+            'thumbnail': answer['items'][i]['volumeInfo'].get('imageLinks')
+            .get('thumbnail'),
             'preview': answer['items'][i]['volumeInfo'].get('previewLink'),
         }
         result_list.append(result_dict)
@@ -359,7 +360,7 @@ def delete_homework_from_profile(request, pk=None):
     del_homework = Homework.objects.filter(id=pk)
     del_homework.delete()
     messages.success(request, f"Home work deleted successfully!!!!")
-    return redirect( "/profile")
+    return redirect("/profile")
 
 
 @login_required
@@ -432,8 +433,7 @@ def password_reset(request):
 def password_reset_email(request):
     send_mail(
         subject='Password Change for your Student Study Portal',
-        message='You have received this email because someone asked for Password change for your account,If you want to change the Password Click the link below.',
-        from_email='rahulmulakkal@gmail.com',
+        message='You have received this email because someone asked for Password change for your account, If you want to change the PasswordClick the link below.', from_email='rahulmulakkal@gmail.com',
         recepient_list=['sarisivadas93@gmail.com'],
     )
     return HttpResponse('Message sent!!')
