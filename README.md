@@ -21,7 +21,6 @@ Student Study Portal is a full stack project which allows the students to create
     -   [Agile Methodology](#Agile-Methodology)
          -   [Overview](#overview)
          -   [EPICS(Milestones)](#epicsmilestones)
-         -   [User Stories issues](#user-stories-issues)
          -   [MoSCoW prioritization](#moscow-prioritization)
          -   [GitHub Projects](#github-projects)
 [Features](#features)
@@ -174,3 +173,35 @@ The font used in this project is fjalla one and Barlow, which compliments the de
 - Discussion form with answer form
 - Profile
 - Login and Register
+
+### Agile Methodology
+#### Overview
+This project was created using agile principles. This was a big learning curve together with my very first full-stack project. Using the agile approach allowed me to plan all the features of the website through user stories. Each user story has acceptance criteria and tasks to clearly outline the requirements for each feature to be completed.
+
+#### EPICS(Milestones)
+The user stories are grouped into seven EPICS or Milestones.
+![Milestones]()
+
+#### MoSCoW prioritization
+This prioritization technique was used to effectively prioritize the features and requirements of the project based on their importance. The acronym "MoSCoW" stands for "Must have, Should have, Could have, and Won't have." Each category helps categorize and prioritize features to guide the development process and ensure that the most critical elements are addressed first. <br>
+![User Story]()
+
+#### GitHub Projects
+The project was created using a basic Kanban Board structure, divided into columns such as Todo, In Progress and Done. This setup provides a clear and organized way to track the status of tasks and visualize and manage the workflow. <br>
+![User Story]()
+
+## Features
+### Navbar
+The navbar is a component that is present on all pages. It was created using Bootstrap and is fully responsive. The 'STUDENT STUDY PORTAL' logo which serves as a link to the homepage is located on the left side on the navbar. On the right are the nav links which allow the user to easily navigate through the website from any point. If the user is not authenticated the links displayed are Home, Register/Signup and Login on the Home and on discussion page Dashboard is also included.
+
+![nav logged out]()
+
+ If the user is authenticated they will see Home, Services,Profile and Logout. The profile link will have the user's username displayed to indicate that the user is logged in. For a better user experience, the Services and Profile button has a dropdown menu with all the facilities denoted. The Home and Logout pages, when active is white and brighter to let the user know the page they are currently on.
+
+ ![nav logged in]()
+ ![nav mobile]()
+
+ ### Footer
+ The Footer is consistent throughout the website with a link to github repository of this project
+
+ ![Footer]()

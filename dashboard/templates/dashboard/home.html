@@ -50,27 +50,22 @@
     </div>
     <div class="col-md-3">
       {% if user.is_authenticated %}
-      <a href="{% url 'books' %}">
+      <a href="{% url 'todo' %}">
       {% else %}
       <a href="{% url 'account_signup' %}">
       {% endif %} 
         <div class="card">
-          <img class="card-img-top" src="{% static 'images/books1.jpg' %}" alt="Books image">
+          <img class="card-img-top" src="{% static 'images/todo.jpg' %}" alt="Todo image">
           <div class="card-body">
             <h5 class="card-title ">
-             Books
+              To-Do
             </h5>
-            Browse books from a list of neatly organised book menu.
+            Create yout to-do list and Remove them as you finish it.
           </div>
         </div>
       </a>
     </div>
     <div class="col-md-3">
-      <!--{% if user.is_authenticated %}
-      <a href="{% url 'discussion' %}">
-      {% else %}
-      <a href="{% url 'account_signup' %}">
-      {% endif %}--> 
       <a href="{% url 'discussion' %}">
         <div class="card">
           <img class="card-img-top" src="{% static 'images/focus-group-discussions.jpg' %}" alt="discussion image">
@@ -105,17 +100,17 @@
     </div>
     <div class="col-md-3">
       {% if user.is_authenticated %}
-      <a href="{% url 'todo' %}">
+      <a href="{% url 'books' %}">
       {% else %}
       <a href="{% url 'account_signup' %}">
       {% endif %} 
         <div class="card">
-          <img class="card-img-top" src="{% static 'images/todo.jpg' %}" alt="Todo image">
+          <img class="card-img-top" src="{% static 'images/books1.jpg' %}" alt="Books image">
           <div class="card-body">
             <h5 class="card-title ">
-              To-Do
+             Books
             </h5>
-            Create yout to-do list and Remove them as you finish it.
+            Browse books from a list of neatly organised book menu.
           </div>
         </div>
       </a>
