@@ -48,11 +48,11 @@
               <a class="nav-link {% if '/' == request.path %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if '/' == request.path %}active{% endif %}" aria-current="page" href="{% url 'discussion' %}">Dashboard</a>
+              <a class="nav-link {% if request.path == discussion %}active{% endif %}" aria-current="page" href="{% url 'discussion' %}">Dashboard</a>
             </li>
             {% if user.is_authenticated%}
             <li class="nav-item">
-              <a class="nav-link {% if request.path == logout_url %}active{% endif %}" 
+              <a class="nav-link {% if request.path == ask_a_question %}active{% endif %}" 
               aria-current="page" href="{% url 'ask-a-question' %}">Ask a Question</a>
             </li>
             <li class="nav-item">

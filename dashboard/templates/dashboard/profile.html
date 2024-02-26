@@ -24,7 +24,7 @@
                     <th scope="row">{{forloop.counter}}</th>
                     <td>{{todo.title}}</td>
                     <td>
-                        <a href="{% url 'update-todo' todo.id%}">
+                        <a href="{% url 'update-todo-list-from-profile' todo.id%}">
                             <div class="form-check">
                                 {% if todo_data.is_completed == True%}
                                 <input class="form-check-input" type="checkbox" value="" checked>
@@ -39,7 +39,7 @@
                         </a>
                     </td>
 
-                    <td><a href="{% url 'delete-todo' todo.id%}"><i class="fa fa-trash fa-2x"></i></a></td>
+                    <td><a href="{% url 'delete-todo-list-from-profile' todo.id%}"><i class="fa fa-trash fa-2x"></i></a></td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -60,7 +60,6 @@
                     <th scope="col">#</th>
                     <th scope="col">Subject</th>
                     <th scope="col">Title</th>
-                    <th scope="col">Description</th>
                     <th scope="col">Due</th>
                     <th scope="col">Status</th>
                     <th scope="col">Delete</th>
@@ -72,10 +71,10 @@
                     <th scope="row">{{forloop.counter}}</th>
                     <td>{{hw.subject}}</td>
                     <td>{{hw.title}}</td>
-                    <td>{{hw.description}}</td>
+
                     <td>{{hw.due_date}}</td>
                     <td>
-                        <a href="{% url 'update-homework' hw.id %}">
+                        <a href="{% url 'update-homework-from-profile' hw.id %}">
                             <div class="form-check">
                                 {% if homework.is_finished == True %}
                                 <input class="form-check-input" type="checkbox" value="" checked>
@@ -88,7 +87,7 @@
                             </div>
                         </a>
                     </td>
-                    <td><a href="{% url 'delete-homework' hw.id %}"><i class="fa fa-trash fa-2x"></i></a></td>
+                    <td><a href="{% url 'delete-homework-from-profile' hw.id %}"><i class="fa fa-trash fa-2x"></i></a></td>
                 </tr>
                 {% endfor %}
             </tbody>

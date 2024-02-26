@@ -26,33 +26,25 @@ Student Study Portal is a full stack project which allows the students to create
 [Features](#features)
     -   [Navbar](#Navbar)
     -   [Footer](#Footer)
-
 -   [Home](#Home)
-        -   [Hero Section](#hero-section)
-        -   [Search Form](#search-form)
-        -   [Recent Listings](#recent-listings)
-        -   [Listing Card](#listing-card)
-    -   [Listings Page](#listings-page)
-    -   [Create Listing](#create-listing)
-    -   [Profile Page](#profile-page)
-    -   [My Listings](#my-listings)
-    -   [My Favourites](#my-favourites)
-    -   [Remove From Favourites](#remove-from-favourites)
-    -   [Edit Listing](#edit-listing)
-    -   [Delete Listing](#delete-listing)
-    -   [View Listing](#view-listing)
-    -   [User account and User account listings](#user-account-and-user-account-listings)
-    -   [Sign In Page](#sign-in-page)
-    -   [Sign Up Page](#sign-up-page)
-    -   [Sign Out Confirmation](#sign-out-confirmation)
-    -   [Edit Profile](#edit-profile)
-    -   [Delete Profile Confirmation](#delete-profile-confirmation)
-    -   [We are sorry to see you go](#we-are-sorry-to-see-you-go)
-    -   [Password reset](#password-reset)
-    -   [Password reset email sent](#password-reset-email-sent)
-    -   [Enter a new password](#enter-a-new-password)
-    -   [Password Reset Completed](#password-reset-completed)
-    -   [Error Pages](#error-pages)
+
+       * [Landing section](#landing-section)
+
+       * [Discussion section](#discussion-section)
+-    [Landing section](#landing-section)
+        * [Notes](#notes)
+        * [Homework](#homework)
+        * [To-Do](#to-do)
+        * [Youtube](#youtube)
+        * [Books](#books)
+        * [Wikipedia](#wikipedia)
+        * [Calculator](#calculator)
+-    [Discussion section](#discussion-section)
+        * [Dashboard](#dashboard)
+        * [Ask a question](#ask-a-question)
+        * [Question and its Answers](#question-and-its-answers)
+        * [Answer Form](#answer-form)
+        * [Delete and Update Answers](#delete-and-update-answers)
 -   [Future Features](#future-features)
 -   [Testing](#testing)
 -   [Bugs](#Bugs)
@@ -192,7 +184,7 @@ The project was created using a basic Kanban Board structure, divided into colum
 
 ## Features
 ### Navbar
-The navbar is a component that is present on all pages. It was created using Bootstrap and is fully responsive. The 'STUDENT STUDY PORTAL' logo which serves as a link to the homepage is located on the left side on the navbar. On the right are the nav links which allow the user to easily navigate through the website from any point. If the user is not authenticated the links displayed are Home, Register/Signup and Login on the Home and on discussion page Dashboard is also included.
+The navbar is a component that is present on all pages. It was created using Bootstrap and is fully responsive. The 'STUDENT STUDY PORTAL' logo which serves as a link to the homepage is located on the left side on the navbar. On the right are the nav links which allow the user to easily navigate through the website from any point. If the user is not authenticated the links displayed are Home, Register/Signup and Login on the Home and on discussion page Dashboard is also included.These button change their background colors on hovering giving user a better experience.
 
 ![nav logged out]()
 
@@ -205,3 +197,104 @@ The navbar is a component that is present on all pages. It was created using Boo
  The Footer is consistent throughout the website with a link to github repository of this project
 
  ![Footer]()
+
+### Home
+#### Landing section
+The Landing Section displays eight cards with an image ,a title and Small discription of what the user can do there.
+They are arranged in two layers. The first layer depicts the services to create and store data and to asks doubt, while the second layer other facilities where the student can search and calculate as per requirement.
+
+![image]()
+
+The landing section also displays a greeting to the user with their Username which enhances the user experience.
+Among the eight facilities provided the user can access the discussion forum without logging in all other facilities require the user to be logged in to have access to it.
+
+#### Discussion 
+The discussion card redirects the user to a page where all the asked questions and ongoing discussions a shown.This page has a header and footer.The header also displays a button to return to home, dashboard and also Ask a question.
+
+![image]()
+
+#### Notes
+The Notes pages initially displays an form with a message '(Please fill in the form to create Notes and submit it.)'.On filling and submitting the form, a card appears above the form with the title of the note created and its content.A message is also displayed that the notes has been created successfully from the users account.On clicking on the card the user can see the detailed view of the created note.
+
+The note card also has a trash bin icon.On clicking that icon the correcsponding note is deleted and a confirmation message is displayed. 
+
+This page is responsive and the card take up full width on mobile screens. 
+![image]()
+
+#### Homework
+The Homework page initially displays a form to create homeworks. The message bar displays 'You have no pending Home works .Create to have More!!!.
+After filling the form with the information and submitting it a table appears with subject, title, due date, status, details.
+
+On clicking the trash-bin in the table the corresponding homework is deleted.
+
+The View Now button displays the homework in detail.
+
+With the check-box in the table we can change the status of the homework .
+
+Respective messages are displayed on adding and deleting homeworks.
+
+On smaller screens the table changes itself into cards with all the information.
+
+![image]()
+![image]()
+
+#### To-Do
+The to-do page displays a form with a create button. On adding the to-do item into it a table is created with the informations and a message is displayed.
+
+The status of the to-do list items can be updated from the table and the items can also be deleted on clicking the trash-bin icon.
+![image]()
+
+#### Books
+
+The Books page allows the user to search for books related to any topic and read it online or order it.
+This page has a search bar where the user can enter their search text. The top ten books are displayed below  along with their details. On clicking the title of the book, the user is redirected to Google Books ina new tab where they can read the book or buy the book.
+![image]()
+
+#### YouTube
+
+The YouTube page allows the user to search for youtube videos related to their topics and watch it in a new tab.
+This page has a search bar where the user can enter their search text. The top ten videos are displayed with their details and link.On clinking the link the videos opens in a different tab.
+
+![image]()
+
+
+#### Wikipedia
+
+The Wikipedia page allows the user to search for information in Wikipedia related to their topics and read it in a new tab.
+This page has a search bar where the user can enter their search text. The information from wikipedia is displayed below with its link in it. On clicking the link the wikipedia page opens in a new tab.
+
+![image]()
+
+#### Calculator
+
+The Calculator page has a built-in calculator.The user can do basic calculations using it.
+
+![image]()
+
+#### Dashboard
+While clicking the discussion card on the home page the user is redirected to the Dashboard if the Discussion forum.Here all the asked Questions are displayed in a cards form. Each card displays the Title, Author and posting time.
+
+![image]()
+#### Ask a Question
+If the user wants to Ask question, then they have to Login.Once the user logs in, The nav-bar displays a new button 'Ask a Question', which redirects them to a new page with a form.On filling an submitting that form the a new discussion forum is started and it is displayed as a card on the dashboard.
+
+![image]()
+
+#### Question and its Answers
+The discussion form can be visited by any person without logging in. From the dashboard the user can select any topic and click on the respective cards.Then they will be redirected to a page with that particular question and its answers.
+
+![image]()
+#### Answer Form
+If the user wants to answer any of the question, then they have to login and write their answers. Once the user logs in to write the answer, an answer form appears with a submit button.
+The user can fill in the form and submit it.
+
+![image]()
+
+#### Delete and Update Answers
+If the logged in person enters an answer and submits it, A Delete and an Edit button appears.It appears only for the answers submitted by the respective user.i.e,They cannot delete or update answers by other users.
+
+On deleting the answer, a modal appears and confirms if the user wants to delete it or not.
+
+On editing the answer, The answer form is populated with the selected answer and can be edited and Updated.
+
+![image]()

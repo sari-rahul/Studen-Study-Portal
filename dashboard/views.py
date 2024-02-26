@@ -151,6 +151,7 @@ class homework_detail_view(generic.DetailView):
 
 
 # ---------------------------------------------------------YOUTUBE PAGE VIEWS
+@login_required
 def youtube_search(request):
     '''
     View to search videos in Youtube
@@ -260,6 +261,7 @@ def update_todo_list(request, pk=None):
 
 
 # ---------------------------------------------------------BOOKS PAGE VIEWS
+@login_required
 def books(request):
     '''
     View to search books
@@ -317,6 +319,7 @@ def wiki(request):
 
 
 # ---------------------------------------------------------CALCULATOR PAGE VIEW
+@login_required
 def calculator(request):
 
     return render(request, "dashboard/calculator.html")
@@ -345,6 +348,61 @@ def profile(request):
     }
 
     return render(request, "dashboard/profile.html", context)
+
+
+@login_required
+def delete_homework_from_profile(request, pk=None):
+    '''
+    View for Deleting homeworks from profile page.
+    '''
+    del_homework = Homework.objects.filter(id=pk)
+    del_homework.delete()
+    messages.success(request, f"Home work deleted successfully!!!!")
+    return redirect( "/profile")
+
+
+@login_required
+def delete_todo_list_from_profile(request, pk=None):
+    '''
+        View for Deleting todo list items from profile
+    '''
+    del_todo_list = Todo.objects.filter(id=pk)
+    del_todo_list.delete()
+    messages.success(request, f"Item successfully deleted from To-Do List!!!!")
+    return redirect("/profile")
+
+
+@login_required
+def update_homework_from_profile(request, pk=None):
+    '''
+    View for Updating the status of Homework done
+    and displaying success message.
+    '''
+    homework = Homework.objects.get(id=pk)
+    if homework.is_finished is True:
+        homework.is_finished = False
+    else:
+        homework.is_finished = True
+    homework.save()
+    messages.success(request, f"Home work updated successfully!!!!")
+    return redirect("/profile")
+
+
+@login_required
+def update_todo_list_from_profile(request, pk=None):
+    '''
+    View for Updating the status of items in ToDo list
+    done and displaying success message
+
+    '''
+    todo = Todo.objects.get(id=pk)
+    if todo.is_completed is True:
+        todo.is_completed = False
+    else:
+        todo.is_completed = True
+    todo.save()
+    messages.success(request, f"Todo list updated successfully!!!!")
+    return redirect("/profile")
 
 
 # ---------------------------------------------------------DELETE ACCOUNT VIEW
