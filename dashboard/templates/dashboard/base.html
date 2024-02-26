@@ -72,10 +72,10 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                profile
+                profile <span id="profile-name">({{user}})</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{% url 'profile' %}">Your Profile</a>
+                <a class="dropdown-item" href="{% url 'profile' %}">Your Profile </a>
                 <a class="dropdown-item" href="{% url 'del-acc-page' %}">Delete Account</a>
                 <a class="dropdown-item" href="{% url 'account_reset_password' %}">Reset Password</a>
             </li>

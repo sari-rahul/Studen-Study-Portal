@@ -59,6 +59,9 @@ main {
     text-transform: uppercase;
     font-weight: 700;
 }
+#profile-name{
+    text-transform:none !important;
+}
 
 
 /*------------------------------------------------------ CARD*/

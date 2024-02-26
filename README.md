@@ -2,7 +2,7 @@
 
 [Live Deployed site](https://student-study-portal-9cc1c977016f.herokuapp.com/)
 
-Student Study Portal is a full stack project which allows the students to create notes,save homeworks,Create To-Do list,Search in books, Youtube, Dictionary and Wikipedia.It also has a calculator built-in. The Project was created as apart is Fullstack Software Development Course at Code Institute.
+Student Study Portal is a full stack project which allows the students to create notes,save homeworks,Create To-Do list,Search in books, Youtube and Wikipedia.It also has a calculator built-in. One of the major feature of this project is It has a built in discussion forum where students can ask doubts to others people and get answers. The Project was created as apart is Fullstack Software Development Course at Code Institute.
 
 ![responsive image](static/readme_images/ssp1.png)
 
@@ -98,11 +98,12 @@ Student Study Portal is a full stack project which allows the students to create
 
 1. To provide students with a place store their Notes and Homeworks.
 2. To provide an to create ToDo List and update it.
-3. To provide a place for the students where they can browse in YouTube ,Dictionary,Wikipedia and various Books as per requirement.
-4. To make the website available and functional on every device.
+3. To provide a place for the students where they can browse in YouTube ,Wikipedia and various Books as per requirement.
+4. To provide a discussion forum for students to asks questions and to answrer them.
+5. To make the website available and functional on every device.
 
 ### Scope
-The project aims to develop an online platform called "Student Study Portal" that facilitates students in Storing Notes, Homeworks , creating ToDo list and to search in different inbuilt services. The platform will be responsive and user-friendly, providing features for user registration, creating notes, homeworks and updating them, creating todo list and updating them, searching in wikipedia,Youtube and books.
+The project aims to develop an online platform called "Student Study Portal" that facilitates students in Storing Notes, Homeworks , creating ToDo list and to search in different inbuilt services. It also provides a discussion forum where student can ask questions and also answer others questions.The platform will be responsive and user-friendly, providing features for user registration, creating notes, homeworks and updating them, creating todo list and updating them, searching in wikipedia,Youtube and books. It give access to all users to the discussion forum without registration.
 
 Key Features:
 1. Initial Project Setup:
@@ -129,7 +130,7 @@ Key Features:
 ## Design
 The website features a calming and professional color palette that combines shades of blue, green, and pink with complementary neutrals. <br>
 
-![Colour Scheme](/static/readme_images/ssp-colorscheme.png)
+![Colour Scheme](static/images/readme_images/ssp-colorscheme.png)
 
 ### Database Schema
 ![database schema]()
@@ -151,10 +152,17 @@ The Homework model was created to store all the information related to Homeworks
 
 The Todo model was created to store all the information related to Todo list created by the user.It is connectes to User model as a ForeignKey.
 
+5. Question Model
+The question model was created to store the questions asked by the user.It is connected to the User model as Foreign key.
+
+6. Answer Model
+The Answer model was created to store the answers given by the users.It is connected to the User model and Question as Foreign keys.
+
+
 ### Fonts
 The font used in this project is fjalla one and Barlow, which compliments the design of the website. <br>
 
-![Font](static/readme_images/ssp-font.png)
+![Font](static/images/readme_images/ssp-font.png)
 
 ### Wireframes
 - Home
@@ -162,5 +170,7 @@ The font used in this project is fjalla one and Barlow, which compliments the de
 - Homework
 - Todo
 - Search
+- Discussion forum dashboard
+- Discussion form with answer form
 - Profile
 - Login and Register
