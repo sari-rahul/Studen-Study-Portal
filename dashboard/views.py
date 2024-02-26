@@ -6,9 +6,10 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.contrib.auth import authenticate
 from youtubesearchpython import VideosSearch
-from . forms import *
 import requests
 import wikipedia
+from . forms import *
+
 
 # Create your views here.
 # ---------------------------------------------------------HOME VIEWS

@@ -29,8 +29,9 @@ Student Study Portal is a full stack project which allows the students to create
 -   [Home](#Home)
 
        * [Landing section](#landing-section)
-
        * [Discussion section](#discussion-section)
+       * [Profile section](#profile-section)
+
 -    [Landing section](#landing-section)
         * [Notes](#notes)
         * [Homework](#homework)
@@ -45,6 +46,12 @@ Student Study Portal is a full stack project which allows the students to create
         * [Question and its Answers](#question-and-its-answers)
         * [Answer Form](#answer-form)
         * [Delete and Update Answers](#delete-and-update-answers)
+-    [Profile section](#profile-section)
+        * [Your Profile](#your-profile)
+        * [Delete Account](#delete-account)
+        * [Reset Password](#reset-password)
+-    [Sign In](#sign-in)
+-    [Register](#register)
 -   [Future Features](#future-features)
 -   [Testing](#testing)
 -   [Bugs](#Bugs)
@@ -144,9 +151,11 @@ The Homework model was created to store all the information related to Homeworks
 The Todo model was created to store all the information related to Todo list created by the user.It is connectes to User model as a ForeignKey.
 
 5. Question Model
+
 The question model was created to store the questions asked by the user.It is connected to the User model as Foreign key.
 
 6. Answer Model
+
 The Answer model was created to store the answers given by the users.It is connected to the User model and Question as Foreign keys.
 
 
@@ -298,3 +307,134 @@ On deleting the answer, a modal appears and confirms if the user wants to delete
 On editing the answer, The answer form is populated with the selected answer and can be edited and Updated.
 
 ![image]()
+
+#### Your Profile
+The user can visit their profile by clicking the button on the nav-bar.Once they visit 'Your Profile' they will redirected to a page which instantly shows their pending tasks from to-do list and Homework table.
+
+The page has a welcome message with the username which increases user experience.
+
+The tables will be displayed only if they have pending tasks else,a respective message will be displayed.
+
+The table items can be deleted and change in status from profile page. If they click the the trash-bin they can delete the respective elements from each table and the status of the items can also be changed.
+
+Respective buttons for creating todo items and homework items are also provided which redirects the user to the respective forms and help to create the items.
+
+![image]()
+#### Delete Account
+
+When the user wants to delete their account,they can click on the 'Delete Account' button from the dropdown of profile button. Once they click this button, a confirmation message is displayed asking 'If they are sure' and on confirmation the account is deleted and the a confirmation message is diaplayed.
+
+![image]()
+#### Reset Password
+When the user wants to reset password ,They can click on the button 'Rest Password' from the Profile button's dropdown and will be redirected to the Password Reset page.The user will be asked to enter the email to which the reset steps are to be sent.After submission a email will be sent to the given email account with sets to reset password.
+
+![image]()
+
+#### Sign-In
+Consist of a form with username and password. Below it has a link to sign in, followed by a link to reset password which submits the form.
+
+![Sign In]()
+
+#### Register
+Consists of a form with username ,password and an optional email address. The sign in link is also provided in a message below the heading.The Sign Up button is found below the form.
+
+![Register]()
+#### Logout
+Logout button appears on the nav-bar and and on clicking asks for confirmation .After logging out the user returns to Home page with a message saying 'You have Logged out'.
+
+![Logout]()
+## Future Features
+1. I would like to improve the dashboard user experience for the discussion form.
+2. I would like to include direct message options for user in discussion panel.
+3. I would like to include image options while creating Notes.
+
+## Testing
+Testing documentation can be found [here.](./TESTING.md)
+
+## Bugs
+
+## Technologies And Languages
+### Languages Used
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+- Python
+- Django
+- Django Rest Framework
+
+### Python Modules
+- dj-database-url - This library is used to parse the database URL specified in the DATABASE_URL environment variable, which is commonly used for configuring database connections in Django projects.
+
+- gunicorn - Gunicorn is a popular WSGI (Web Server Gateway Interface) HTTP server for running Python web applications, including Django applications, in a production environment.
+
+-  psycopg2 - Psycopg2 is a PostgreSQL adapter for Python. It allows Django to connect to PostgreSQL databases.
+
+- whitenoise - Whitenoise is a middleware for serving static files directly from your Django application.
+
+- youtube-search-python - It is a library which provides videosearch to search for YouTube videos, channels & playlists & get video information using link. 
+
+- wikipedia - Wikipedia is a Python library that makes it easy to access and parse data from Wikipedia.
+
+
+### Technologies and programs
+* [Favicon Generator](https://favicon.io/favicon-converter/) was used to generate Favicon.
+* [Fontawesome Icons](https://fontawesome.com/search?new=yes&o=r) was used to generate Fontawsome icons.
+* [GitHub](https://github.com/) is the hosting site used to store the code for the website.
+* [Git](https://git-scm.com/) was used as a version control software to commit and push the code to the GitHub repository.
+* [Code Institute Template](https://github.com/Code-Institute-Org/gitpod-full-template) was used as a starting point for the project.
+* [Google Fonts](https://fonts.google.com/) was used to import fonts.
+* [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/overview/) was used during testing, debugging and making the website responsive.
+* [W3C HTML Validator](https://validator.w3.org/) was used to check for errors in the HTML code.
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to check for errors in the CSS code
+* [Js Hint](https://jshint.com/) was used to validate the JavaScript code.
+* [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the Python code.
+
+
+## Deployment
+### Before Deployment
+To ensure the application is deployed correctly on Heroku it is mandatory to update the requirements.txt. This is a list of requirements that the application needs in order to run.
+
+- To create the list of requirements we use the command pip3 freeze > requirements.txt. This will ensure the file with the requirements is updated.
+- Then commit and push the changes to GitHub.
+- ! Before pushing code to GitHub ensure all credentials are in an env.py file, which is included in the .gitignore file. This tells Git not to track this file which will prevent it from being added to Github and the credentials being exposed.
+
+### Deployment on Heroku
+- To deploy the project on Heroku, first create an account.
+- Once logged in, create a new app by clicking on the create app button
+- Pick a unique name for the app, select a region, and click Create App.
+- On the next page select the settings tab and scroll down to Config Vars. If there are any files that should be hidden like credentials and API keys they should be added here. In this project, there are credentials that need to be protected. This project requires credentials added for:
+1. Django's secret key
+2. Database Credentials
+3. Email host password.
+- Scroll down to Buildpacks. The buildpacks will install further dependencies that are not included in the requirements.txt. For this project, the buildpack required is Python
+- From the tab above select the deploy section.
+- The deployment method for this project is GitHub. Once selected, confirm that we want to connect to GitHub, search for the repository name, and click connect to connect the Heroku app to our GitHub code.
+- Scroll further down to the deploy section where automatic deploys can be enabled, which means that the app will update every time code is pushed to GitHub. Click deploy and wait for the app to be built. Once this is done, a message should appear letting us know that the app was successfully deployed with a view button to see the app.
+### Creating a fork
+1. Navigate to the [repository](https://github.com/sari-rahul/Studen-Study-Portal)
+2. In the top-right corner of the page click on the fork button and select create a fork.
+3. You can change the name of the fork and add description 
+4. Choose to copy only the main branch or all branches to the new fork. 
+5. Click Create a Fork. A repository should appear in your GitHub
+
+### Cloning Repository
+1. Navigate to the [repository](https://github.com/sari-rahul/Studen-Study-Portal)
+2. Click on the Code button on top of the repository and copy the link. 
+3. Open Git Bash and change the working directory to the location where you want the cloned directory. 
+4. Type git clone and then paste the link.
+5. Press Enter to create your local clone.
+
+## Credits
+### Media
+- All the images on the landing page were taken from [Pexels](https://www.pexels.com/).
+
+### Code
+- Learned how to setup django project and deploy to Heroku from CI Django Blog walkthrough.
+- I learned how to create dropdown menu buttons from [codemy.com](https://www.youtube.com/@Codemycom).
+- I have also reffered [Programming with Mosh](https://www.youtube.com/@programmingwithmosh), [Brototype Malayalam](https://www.youtube.com/@BrototypeMalayalam) and [Yes tech media](https://www.youtube.com/@YesTechMedia) you tube channels.
+
+
+### Acknowledgements
+- Huge thanks you to my mentor Jubrile Akolade for encouraging me to go with my very ambitious idea for my first full-stack project.
+- The Slack community who listened to my struggles during development.
