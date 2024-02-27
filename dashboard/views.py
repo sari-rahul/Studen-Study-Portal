@@ -93,7 +93,6 @@ def homework(request):
                 user=request.user,
                 subject=request.POST['subject'],
                 title=request.POST['title'],
-                description=request.POST['description'],
                 due_date=request.POST['due_date'],
                 is_finished=finished
                 )
