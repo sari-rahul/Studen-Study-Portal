@@ -27,4 +27,4 @@ class Todoform(forms.ModelForm):
 
 class Commonform(forms.Form):
     search_text = forms.CharField(max_length=100,
-                                  label='Enter your search here')
+                                  label='Enter your search here:')

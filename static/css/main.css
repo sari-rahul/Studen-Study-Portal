@@ -553,6 +553,17 @@ td .form-check{
     .del-container .btn-danger{
         margin-bottom: 10px;
     }
+    .common-form{
+        display:grid !important;
+    }
+    .common-form .btn-danger{
+        width:50%;
+        margin-top: 5px;
+        margin: auto;
+    }
+    #id_search_text{
+        margin-bottom: 10px;
+    }
 }
 
 
