@@ -4,7 +4,7 @@
 
 Student Study Portal is a full stack project which allows the students to create notes,save homeworks,Create To-Do list,Search in books, Youtube and Wikipedia.It also has a calculator built-in. One of the major feature of this project is It has a built in discussion forum where students can ask doubts to others people and get answers. The Project was created as apart is Fullstack Software Development Course at Code Institute.
 
-![responsive image](static/readme_images/ssp1.png)
+![responsive image](static/images/readme_images/amiresponsive.png)
 
 ## Contents
 
@@ -91,14 +91,26 @@ Student Study Portal is a full stack project which allows the students to create
 16. As a User I want to have an account setup so that I can Delete my account if needed.
 17. As a User I want to have a Password reset Facility so that I can reset my password if needed.
 18. As a Unregistered User I want to redirected to Sign Up page so that I can Instantly Sign up and get access to the website facilities.
+19. As a user I want to have a discussion forum so that I can ask my doubts to other people and get answers
+20. As an Unregistered User I want to Enter the Discussion Forum so that I can read and be aware of the discussion going on.
+21. As a user I want to have access to Home page from the discussion forum so that I can go back to my saved notes and HomeWorks.
+22. As a user I want to have access to read each question and its answer so that I can feel and select the interesting ones.
+23. As a user I want to have access to answer form so that I can Answer the questions.
+24. As a Registered User I want to have edit and delete button to the answers so that edit and delete the answers.
+25. As a user I want to have a dashboard button on each page so that I can go back to the dashboard to see other questions.
+26. As a user I want to have a dashboard for the Discussion forum so that I can see all the discussions happening.
+27. As a developer I want to to validate the code so that the code is according the industry standard.
+28. As a developer I want to deploy the project so that I can check the deployed version is same as the developed version.
+29. As a developer I want to write the detailed README files so that the project is well documented for future references
 
 ### Site Goals
 
 1. To provide students with a place store their Notes and Homeworks.
 2. To provide an to create ToDo List and update it.
 3. To provide a place for the students where they can browse in YouTube ,Wikipedia and various Books as per requirement.
-4. To provide a discussion forum for students to asks questions and to answrer them.
-5. To make the website available and functional on every device.
+4. To provide a discussion forum for students to asks questions and to answer them.
+5. To provide an integrated study environment for students.
+6. To make the website available and functional on every device.
 
 ### Scope
 The project aims to develop an online platform called "Student Study Portal" that facilitates students in Storing Notes, Homeworks , creating ToDo list and to search in different inbuilt services. It also provides a discussion forum where student can ask questions and also answer others questions.The platform will be responsive and user-friendly, providing features for user registration, creating notes, homeworks and updating them, creating todo list and updating them, searching in wikipedia,Youtube and books. It give access to all users to the discussion forum without registration.
@@ -165,15 +177,13 @@ The font used in this project is fjalla one and Barlow, which compliments the de
 ![Font](static/images/readme_images/ssp-font.png)
 
 ### Wireframes
-- Home
-- Notes
-- Homework
-- Todo
-- Search
-- Discussion forum dashboard
-- Discussion form with answer form
-- Profile
-- Login and Register
+- Home ![Home](static/images/wireframes/home-wf.jpg)
+- Notes ![Notes](static/images/wireframes/notes-wf.jpg)
+- Homework![Homework](static/images/wireframes/homework-wf.jpg)
+- Todo ![Todo](static/images/wireframes/todo-wf.jpg)
+- Discussion Dashboard![Discussion forum dashboard](static/images/wireframes/discussion-wf.jpg)
+- Discussion page![Discussion form with answer form](static/images/wireframes/discussion-form-wf.jpg)
+- Profile ![Profile](static/images/wireframes/profile-wf.jpg)
 
 ### Agile Methodology
 #### Overview
@@ -181,38 +191,41 @@ This project was created using agile principles. This was a big learning curve t
 
 #### EPICS(Milestones)
 The user stories are grouped into seven EPICS or Milestones.
-![Milestones]()
+![Milestones](static/images/readme_images/ssp-milestones.png)
 
 #### MoSCoW prioritization
 This prioritization technique was used to effectively prioritize the features and requirements of the project based on their importance. The acronym "MoSCoW" stands for "Must have, Should have, Could have, and Won't have." Each category helps categorize and prioritize features to guide the development process and ensure that the most critical elements are addressed first. <br>
-![User Story]()
+
 
 #### GitHub Projects
 The project was created using a basic Kanban Board structure, divided into columns such as Todo, In Progress and Done. This setup provides a clear and organized way to track the status of tasks and visualize and manage the workflow. <br>
-![User Story]()
+![User Story](static/images/readme_images/ssp-kanban-board.png)
 
 ## Features
 ### Navbar
 The navbar is a component that is present on all pages. It was created using Bootstrap and is fully responsive. The 'STUDENT STUDY PORTAL' logo which serves as a link to the homepage is located on the left side on the navbar. On the right are the nav links which allow the user to easily navigate through the website from any point. If the user is not authenticated the links displayed are Home, Register/Signup and Login on the Home and on discussion page Dashboard is also included.These button change their background colors on hovering giving user a better experience.
 
-![nav logged out]()
+![nav logged out](static/images/readme_images/nav-bar-loggedout.png)
 
  If the user is authenticated they will see Home, Services,Profile and Logout. The profile link will have the user's username displayed to indicate that the user is logged in. For a better user experience, the Services and Profile button has a dropdown menu with all the facilities denoted. The Home and Logout pages, when active is white and brighter to let the user know the page they are currently on.
 
- ![nav logged in]()
- ![nav mobile]()
+ ![nav logged in](static/images/readme_images/nav-bar.png)
+
+ ![nav mobile](static/images/readme_images/ssp-nav-bar-mobile.png)
 
  ### Footer
  The Footer is consistent throughout the website with a link to github repository of this project
 
- ![Footer]()
+ ![Footer](static/images/readme_images/ssp-footer.png)
 
 ### Home
 #### Landing section
 The Landing Section displays eight cards with an image ,a title and Small discription of what the user can do there.
 They are arranged in two layers. The first layer depicts the services to create and store data and to asks doubt, while the second layer other facilities where the student can search and calculate as per requirement.
 
-![image]()
+![Landing page](static/images/readme_images/ssp-landingpage.png)
+
+![Landing page mobile](static/images/readme_images/ssp-langingpage-mobile.png)
 
 The landing section also displays a greeting to the user with their Username which enhances the user experience.
 Among the eight facilities provided the user can access the discussion forum without logging in all other facilities require the user to be logged in to have access to it.
@@ -220,7 +233,9 @@ Among the eight facilities provided the user can access the discussion forum wit
 #### Discussion 
 The discussion card redirects the user to a page where all the asked questions and ongoing discussions a shown.This page has a header and footer.The header also displays a button to return to home, dashboard and also Ask a question.
 
-![image]()
+![Disscussion Landing Page](static/images/readme_images/ssp-discussionlandingpage.png)
+
+![Disscussion Landing Page Mobile](static/images/readme_images/ssp-discussionlandingpage-mobile.png)
 
 #### Notes
 The Notes pages initially displays an form with a message '(Please fill in the form to create Notes and submit it.)'.On filling and submitting the form, a card appears above the form with the title of the note created and its content.A message is also displayed that the notes has been created successfully from the users account.On clicking on the card the user can see the detailed view of the created note.
@@ -228,7 +243,8 @@ The Notes pages initially displays an form with a message '(Please fill in the f
 The note card also has a trash bin icon.On clicking that icon the correcsponding note is deleted and a confirmation message is displayed. 
 
 This page is responsive and the card take up full width on mobile screens. 
-![image]()
+![Notes page](static/images/readme_images/ssp-notescreated.png)
+![Notes page mobile view](static/images/readme_images/ssp-notespage-mobile.png)
 
 #### Homework
 The Homework page initially displays a form to create homeworks. The message bar displays 'You have no pending Home works .Create to have More!!!.
@@ -244,27 +260,30 @@ Respective messages are displayed on adding and deleting homeworks.
 
 On smaller screens the table changes itself into cards with all the information.
 
-![image]()
-![image]()
+![Homewrk page](static/images/readme_images/ssp-hw.png)
+![Homewrk page mobile](static/images/readme_images/ssp-hw-mobile.png)
 
 #### To-Do
 The to-do page displays a form with a create button. On adding the to-do item into it a table is created with the informations and a message is displayed.
 
 The status of the to-do list items can be updated from the table and the items can also be deleted on clicking the trash-bin icon.
-![image]()
+![Todo page](static/images/readme_images/ssp-todo.png)
+![Todo page mobile](static/images/readme_images/ssp-todo-mobile.png)
 
 #### Books
 
 The Books page allows the user to search for books related to any topic and read it online or order it.
 This page has a search bar where the user can enter their search text. The top ten books are displayed below  along with their details. On clicking the title of the book, the user is redirected to Google Books ina new tab where they can read the book or buy the book.
-![image]()
+![Books Page](static/images/readme_images/ssp-books.png)
+![Books page mobile](static/images/readme_images/ssp-books-mobile.png)
 
 #### YouTube
 
 The YouTube page allows the user to search for youtube videos related to their topics and watch it in a new tab.
 This page has a search bar where the user can enter their search text. The top ten videos are displayed with their details and link.On clinking the link the videos opens in a different tab.
 
-![image]()
+![youtube page](static/images/readme_images/ssp-youtubemobile.png)
+![youtube page mobile](static/images/readme_images/ssp-youtube.png)
 
 
 #### Wikipedia
@@ -272,32 +291,38 @@ This page has a search bar where the user can enter their search text. The top t
 The Wikipedia page allows the user to search for information in Wikipedia related to their topics and read it in a new tab.
 This page has a search bar where the user can enter their search text. The information from wikipedia is displayed below with its link in it. On clicking the link the wikipedia page opens in a new tab.
 
-![image]()
+![wikipedia image](static/images/readme_images/ssp-wiki.png)
+![wikipedia image mobile](static/images/readme_images/ssp-wiki-mobile.png)
 
 #### Calculator
 
 The Calculator page has a built-in calculator.The user can do basic calculations using it.
 
-![image]()
+![calculator image](static/images/readme_images/ssp-calc.png)
+![calculator image mobile](static/images/readme_images/ssp-calc-mobile.png)
 
 #### Dashboard
 While clicking the discussion card on the home page the user is redirected to the Dashboard if the Discussion forum.Here all the asked Questions are displayed in a cards form. Each card displays the Title, Author and posting time.
 
-![image]()
+![Discussion dashboard image](static/images/readme_images/ssp-discussionlandingpage.png)
+![Discussion dashboard mobile image](static/images/readme_images/ssp-discussionlandingpage-mobile.png)
 #### Ask a Question
 If the user wants to Ask question, then they have to Login.Once the user logs in, The nav-bar displays a new button 'Ask a Question', which redirects them to a new page with a form.On filling an submitting that form the a new discussion forum is started and it is displayed as a card on the dashboard.
 
-![image]()
+![Ask a question](static/images/readme_images/ssp-askaquestion.png)
+![Ask a question mobile](static/images/readme_images/ssp-askaquestion-mobile.png)
 
 #### Question and its Answers
 The discussion form can be visited by any person without logging in. From the dashboard the user can select any topic and click on the respective cards.Then they will be redirected to a page with that particular question and its answers.
 
-![image]()
+![Question and Answer](static/images/readme_images/ssp-discussionforum.png)
+![Question and Answer](static/images/readme_images/ssp-dicussionforum-mobile.png)
+
 #### Answer Form
 If the user wants to answer any of the question, then they have to login and write their answers. Once the user logs in to write the answer, an answer form appears with a submit button.
 The user can fill in the form and submit it.
 
-![image]()
+![Answerform image](static/images/readme_images/ssp-answerform.png)
 
 #### Delete and Update Answers
 If the logged in person enters an answer and submits it, A Delete and an Edit button appears.It appears only for the answers submitted by the respective user.i.e,They cannot delete or update answers by other users.
@@ -306,7 +331,7 @@ On deleting the answer, a modal appears and confirms if the user wants to delete
 
 On editing the answer, The answer form is populated with the selected answer and can be edited and Updated.
 
-![image]()
+![Delete and Update buttons](static/images/readme_images/ssp-ans-del-edit.png)
 
 #### Your Profile
 The user can visit their profile by clicking the button on the nav-bar.Once they visit 'Your Profile' they will redirected to a page which instantly shows their pending tasks from to-do list and Homework table.
@@ -319,30 +344,38 @@ The table items can be deleted and change in status from profile page. If they c
 
 Respective buttons for creating todo items and homework items are also provided which redirects the user to the respective forms and help to create the items.
 
-![image]()
+![Profile page](static/images/readme_images/ssp-profile.png)
+![Profile page mobile](static/images/readme_images/ssp-profile-mobile.png)
 #### Delete Account
 
 When the user wants to delete their account,they can click on the 'Delete Account' button from the dropdown of profile button. Once they click this button, a confirmation message is displayed asking 'If they are sure' and on confirmation the account is deleted and the a confirmation message is diaplayed.
 
-![image]()
+![Delete Account Page](static/images/readme_images/ssp-delacc.png)
+![Delete Account Page mobile](static/images/readme_images/ssp-delacc-mobile.png)
+
 #### Reset Password
 When the user wants to reset password ,They can click on the button 'Rest Password' from the Profile button's dropdown and will be redirected to the Password Reset page.The user will be asked to enter the email to which the reset steps are to be sent.After submission a email will be sent to the given email account with sets to reset password.
 
-![image]()
+![Reset Password page](static/images/readme_images/ssp-resetpassword.png)
+![Reset Password page mobile](static/images/readme_images/ssp-resetpass-ombile.png)
 
 #### Sign-In
 Consist of a form with username and password. Below it has a link to sign in, followed by a link to reset password which submits the form.
 
-![Sign In]()
+![Sign In](static/images/readme_images/ssp-signin.png)
+
 
 #### Register
 Consists of a form with username ,password and an optional email address. The sign in link is also provided in a message below the heading.The Sign Up button is found below the form.
 
-![Register]()
+![Register](static/images/readme_images/ssp-register.png)
+
 #### Logout
 Logout button appears on the nav-bar and and on clicking asks for confirmation .After logging out the user returns to Home page with a message saying 'You have Logged out'.
 
-![Logout]()
+![Logout](static/images/readme_images/ssp-signout.png)
+![Logout mobile](static/images/readme_images/ssp-signout-mobile.png)
+
 ## Future Features
 1. I would like to improve the dashboard user experience for the discussion form.
 2. I would like to include direct message options for user in discussion panel.

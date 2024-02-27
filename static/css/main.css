@@ -541,5 +541,19 @@ td .form-check{
         margin: 4px;
         background-color: #e79288;
     }
+    .del-container{
+        width:60%;
+        height: 40%;
+        margin:auto;
+        margin-top: 10%;
+    }
+    #del-card-header{
+        height:5%;
+    }
+    .del-container .btn-danger{
+        margin-bottom: 10px;
+    }
 }
+
+
     

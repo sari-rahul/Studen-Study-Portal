@@ -1,3 +1,4 @@
+/* jshint esversion: 11 */
 // elements of edit views//
 const editButtons = document.getElementsByClassName("btn-edit");
 const answerText = document.getElementById("id_body");

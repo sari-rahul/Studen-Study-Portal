@@ -87,7 +87,7 @@ def homework(request):
                     finished = True
                 else:
                     finished = False
-            except:
+            except Exception as e:
                 finished = False
             homework = Homework(
                 user=request.user,
@@ -209,7 +209,7 @@ def todo(request):
                     completed = True
                 else:
                     completed = False
-            except:
+            except Exception as e:
                 completed = False
             todos = Todo(
                 user=request.user,
