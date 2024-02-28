@@ -380,6 +380,7 @@ Logout button appears on the nav-bar and and on clicking asks for confirmation .
 1. I would like to improve the dashboard user experience for the discussion form.
 2. I would like to include direct message options for user in discussion panel.
 3. I would like to include image options while creating Notes.
+4. I would like to include Edit options to Notes.
 
 ## Testing
 Testing documentation can be found [here.](./TESTING.md)
