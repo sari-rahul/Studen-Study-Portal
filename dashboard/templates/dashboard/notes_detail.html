@@ -13,14 +13,16 @@
             </div>
 
             <hr class="p-0 m-0">
-            <p class="description m-3 ">
+            <p class="description notes-description m-3 ">
                 {{ note.description }}
             </p>
             
         </div>
-
     </div>
 
 </section>
 
 {% endblock content %}
+{% block extras %}
+<script src="{% static 'js/notes.js' %}"></script>
+{% endblock %}

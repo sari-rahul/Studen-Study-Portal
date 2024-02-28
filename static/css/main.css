@@ -271,6 +271,23 @@ td .form-check{
     font-weight: 600;
     color: #0d494e;
 }
+/*------------------------------------------------------ NOTES UPDATE SECTION*/
+
+.notes-card-footer{
+    display: inline-flex;
+    justify-content:space-between;
+}
+#edit-btn{
+    font-size: larger;
+    color: #061e21;
+    
+}
+#edit-btn:hover{
+    font-weight: 700;
+}
+.trash-btn{
+  position: fixed;
+}
 
 /*------------------------------------------------------ HOMEWORK DETAIL SECTION*/
 .hw-heading{

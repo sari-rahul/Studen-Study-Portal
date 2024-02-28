@@ -9,10 +9,10 @@
         <div class="col-md-3 mb-3">
             <a href="{% url 'notes-detail' note.id %}">
                 <div class="card">
-                    <div class="card-header">{{note.title}}</div>
-                    <div class="card-body">{{note.description|slice:"0:50"}}</div>
-                    <div class="card-footer mt-auto "><a href="{% url 'delete-notes' note.id %}">
-                        <i class="fa fa-trash fa-2x"></i></a>
+                    <div class="card-header" id="note-title">{{note.title}}</div>
+                    <div class="card-body" id="note-body">{{note.description|slice:"0:50"}}</div>
+                    <div class="card-footer mt-auto notes-card-footer">
+                        <a href="{% url 'delete-notes' note.id %}"><i class="fa fa-trash fa-2x"></i></a>   
                     </div>
                 </div>
             </a>  
@@ -31,7 +31,7 @@
         </fieldset>
         {{ form|crispy  }}
         <div class="form-group">
-            <button href="{% url 'notes' %}" class="btn btn-outline-info" type="submit">
+            <button href="{% url 'notes' %}" class="btn btn-outline-info" type="submit" id="notes-submit-btn">
                 Create
             </button>
         </div>

@@ -76,7 +76,8 @@
             class="btn btn-submit btn-lg">Submit</button>
         </form>
     {% else %}
-        <h5>Please <a href="{% url 'account_signup' %}"><span class="question-title">log in</span></a> to write an Answer.</h5>
+        <h5>Please <a href="{% url 'account_signup' %}">
+            <span class="question-title">log in</span></a> to write an Answer.</h5>
     {% endif %}
     </div>
 </div>
