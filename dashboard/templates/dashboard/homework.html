@@ -28,9 +28,9 @@
                     <a href="{% url 'update-homework' homework.id %}">
                         <div class="form-check">
                             {% if homework.is_finished == True %}
-                            <input id="flexCheckDefault" class="form-check-input" type="checkbox" value="" checked>
+                            <input class="form-check-input" type="checkbox" value="" checked>
                             {% else %}
-                            <input id="flexCheckDefault" class="form-check-input" type="checkbox" value="">
+                            <input class="form-check-input" type="checkbox" value="">
                             {% endif %}
                             <label class="form-check-label" for="flexCheckDefault">
                                 Mark as Completed
