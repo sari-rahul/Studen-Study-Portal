@@ -33,8 +33,8 @@ The javascript files were tested using Jshint and has passed without any errors.
 |Dashboard models.py |![models.py validation image](static/images/readme_images/test-results/dashboard-models-vali.png)|PASS|
 |Dashboard urls.py|![urls.py validation image](static/images/readme_images/test-results/dashboard-urls.png)|PASS|
 |Dashboard test_form.py|![test_forms.py validation image](static/images/readme_images/test-results/dashboard-testform-vali.png)|PASS|
-|Dashboard test_views.py|![test_views.py validation image]()|PASS|
-|Dashboard views.py|![views.py validation image ]()|PASS|
+|Dashboard test_views.py|![test_views.py validation image](static/images/readme_images/test-results/ssp-test-views-validation.png)|PASS|
+|Dashboard views.py|![views.py validation image ](static/images/readme_images/test-results/ssp-views-validation.png)|PASS|
 |Discussion forms.py|![forms.py validation image](static/images/readme_images/test-results/discussion-forms.py.vali.png)| PASS|
 |Discussion models.py |![models.py validation image](static/images/readme_images/test-results/discussion-models-vali.png)|PASS|
 |Discussion urls.py|![urls.py validation image](static/images/readme_images/test-results/discussion-urls-vali.png)|PASS |

@@ -74,17 +74,17 @@ class TestDashboardViews(TestCase):
         self.assertIn(b'Items added to To-Do list from myUsername!!!',
                       response.content)
 
-
 # --------------------------------------------------------- TEST HOME VIEWS
 
     def test_render_home_page(self):
+
         response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
-
 
 # --------------------------------------------------------- TEST NOTES DELETE
 #                                                                         VIEWS
     def test_delete_notes(self):
+
         '''
         Tests that a the view deletes the created data and is redirected to
         another page
@@ -97,7 +97,6 @@ class TestDashboardViews(TestCase):
                                       args=[new_note.id]), follow=True)
         print(new_note)
         self.assertEqual(response.status_code, 200)
-
 
 # --------------------------------------------------------- TEST HOMEWORK
 #                                                               DELETE VIEWS

@@ -40,7 +40,8 @@ def notes(request):
                 description=request.POST['description'])
             notes.save()
             form = Notesform()
-            messages.success(request, f"Notes added successfully from {request.user.username} account")
+            messages.success(
+                request, f"Notes added successfully from your account")
 
     else:
         form = Notesform()
@@ -216,7 +217,8 @@ def todo(request):
                 is_completed=completed)
             todos.save()
             form = Todoform()
-            messages.success(request, f"Items added to To-Do list from {request.user.username}!!!")
+            messages.success(request,
+                             f"Items added from {request.user.username}!!!")
     else:
         form = Todoform()
 
@@ -432,7 +434,7 @@ def password_reset(request):
 def password_reset_email(request):
     send_mail(
         subject='Password Change for your Student Study Portal',
-        message='You have received this email because someone asked for Password change for your account, If you want to change the PasswordClick the link below.', from_email='rahulmulakkal@gmail.com',
+        message='message', from_email='rahulmulakkal@gmail.com',
         recepient_list=['sarisivadas93@gmail.com'],
     )
     return HttpResponse('Message sent!!')

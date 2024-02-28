@@ -143,7 +143,7 @@ The website features a calming and professional color palette that combines shad
 ![Colour Scheme](static/images/readme_images/ssp-colorscheme.png)
 
 ### Database Schema
-![database schema]()
+![database schema](static/images/readme_images/Database-scheme.png)
 
 #### Models
 1. Allauth User Model
