@@ -385,7 +385,7 @@ Logout button appears on the nav-bar and and on clicking asks for confirmation .
 Testing documentation can be found [here.](./TESTING.md)
 
 ## Bugs
-1. The check boxes in the project (IN  Home work and To-Do pages) do not work as per needed.Howerver the 'Mark as completed' attains the requirement of updating the status of the items in the table.
+1. The check boxes in the project (in Home work and To-Do pages) do not work as per needed.Howerver the 'Mark as completed' attains the requirement of updating the status of the items in the table.
 
 ## Technologies And Languages
 ### Languages Used
@@ -395,7 +395,6 @@ Testing documentation can be found [here.](./TESTING.md)
 - Bootstrap
 - Python
 - Django
-- Django Rest Framework
 
 ### Python Modules
 - dj-database-url - This library is used to parse the database URL specified in the DATABASE_URL environment variable, which is commonly used for configuring database connections in Django projects.
