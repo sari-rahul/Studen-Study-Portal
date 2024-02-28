@@ -385,6 +385,7 @@ Logout button appears on the nav-bar and and on clicking asks for confirmation .
 Testing documentation can be found [here.](./TESTING.md)
 
 ## Bugs
+1. The check boxes in the project (IN  Home work and To-Do pages) do not work as per needed.Howerver the 'Mark as completed' attains the requirement of updating the status of the items in the table.
 
 ## Technologies And Languages
 ### Languages Used
