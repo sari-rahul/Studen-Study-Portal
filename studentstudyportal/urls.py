@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from discussion.views import discussion
+from .views import handler403, handler404, handler500
 
 
 urlpatterns = [
@@ -25,3 +26,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('discussion/', include('discussion.urls'),name="discussion-urls"),
 ]
+handler404 = handler404
+handler500 = handler500
+#handler403 = handler403

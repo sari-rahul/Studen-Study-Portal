@@ -12,7 +12,7 @@ from .forms import AnswerForm, QuestionForm
 
 class discussion (generic.ListView):
     queryset = Question.objects.all().order_by("-created_on")
-    paginate_by = 6
+    paginate_by = 9
     template_name = "discussion/question_list.html"
 
 

@@ -20,7 +20,7 @@ body {
 body {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.5));
     overflow-x: hidden;
-    height: 100vh;
+    height: 100vh !important;
 
     background-repeat: no-repeat;
 }
@@ -31,7 +31,7 @@ body {
 /*------------------------------------------------------ MAIN*/
 main {
     font-family: Barlow, Quicksand, Rubik, sans-serif, serif, 'Times New Roman', Times, serif !important;
-    min-height: 100vh !important;
+    min-height: 100vh;
 }
 /*------------------------------------------------------ USERNAME*/
 .username{
@@ -567,6 +567,5 @@ td .form-check{
         margin-bottom: 10px;
     }
 }
-
 
     
