@@ -12,13 +12,15 @@ html,
 body {
     max-width: 100%;
     overflow-x: hidden;
-    height: 100%;
+    height: 100vh;
     width: 100%;
 }
 
 body {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.5));
     overflow-x: hidden;
+    height: 100vh;
+
     background-repeat: no-repeat;
 }
 .example::-webkit-scrollbar {
@@ -28,6 +30,7 @@ body {
 /*------------------------------------------------------ MAIN*/
 main {
     font-family: Barlow, Quicksand, Rubik, sans-serif, serif, 'Times New Roman', Times, serif !important;
+    min-height: 70vh;
 }
 /*------------------------------------------------------ USERNAME*/
 .username{
@@ -55,6 +58,9 @@ main {
 .navbar-dark .navbar-nav .nav-link{
     text-transform: uppercase;
     font-weight: 700;
+}
+#profile-name{
+    text-transform:none !important;
 }
 
 
@@ -180,7 +186,7 @@ legend{
 footer {
     font-family: Rubik, sans-serif, serif, 'Times New Roman', Times, serif;
     background-color: #0d494e;
-    height:4rem;
+    height:3.5rem;
     width: 100%;
     color: white;
 }
@@ -264,6 +270,23 @@ td .form-check{
     text-transform: capitalize !important;
     font-weight: 600;
     color: #0d494e;
+}
+/*------------------------------------------------------ NOTES UPDATE SECTION*/
+
+.notes-card-footer{
+    display: inline-flex;
+    justify-content:space-between;
+}
+#edit-btn{
+    font-size: larger;
+    color: #061e21;
+    
+}
+#edit-btn:hover{
+    font-weight: 700;
+}
+.trash-btn{
+  position: fixed;
 }
 
 /*------------------------------------------------------ HOMEWORK DETAIL SECTION*/
@@ -426,3 +449,142 @@ td .form-check{
     color: white;
     background-color: rgb(255, 188, 4);
 }
+/*------------------------------------------------------DELETE ACCOUNT PAGE*/
+.del-container{
+    width:40%;
+    height: 30%;
+}
+.del-container.card-text p{
+    text-align: center;
+    margin-left: 0 !important; 
+}
+#del-card-header:hover{
+    background-color: #e93237 !important;
+}
+#signin:hover{
+ font-weight: 700 !important;
+}
+/*------------------------------------------------------PROFILE PAGE*/
+
+#profile-username{
+    text-transform: capitalize;
+}
+/*------------------------------------------------------DISCUSSION-DASHBOARD PAGE*/
+
+.forum-card{
+    color:#e93237;
+}
+.author{
+    text-transform: capitalize;
+}
+.page-link{
+    background-color:#e79288;
+    color: #0d494e;
+    font-weight: 600;
+    border:1px solid #0d494e;
+    border-radius: 4px;
+}
+.page-link:hover{
+    background-color:#88c9cf;
+    color: #061e21;
+    border:1px solid #e93237;
+}
+
+/*------------------------------------------------------A DISCUSSION FORUM PAGE*/
+.question-title{
+    color: #e93237;
+}
+.question-subtitle{
+    font-weight: 600;
+}
+.question-content{
+    font-size: larger;
+}
+.answer-author{
+    font-weight: 600;
+}
+.btn-delete{
+    background-color: #e93237;
+    color:white;
+}
+.btn-delete:hover{
+    color:#e93237;
+    background-color:white
+}
+.btn-edit{
+    background-color:#0e9ca9;
+    color:white;
+}
+.btn-edit:hover{
+    background-color: white;
+    color:#0e9ca9;
+}
+.btn-submit{
+    background-color: #05454b;
+    color:white;
+
+}
+.btn-submit:hover{
+    background-color: white;
+    color:#05454b;
+}
+/*------------------------------------------------------MEDIA QUERIES*/
+
+@media screen and (max-width:800px){
+    body{
+        background-color: red;
+    }
+    .hw-container thead{
+        display :none;
+    }
+    .hw-container tbody{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 4px;
+        color:#0d494e;
+        
+    }
+    .hw-container tbody tr td{
+        display:block;
+        border: 0;
+        
+    }
+    .hw-container tbody td{
+        padding: 4px;
+        font-weight: bold;
+    }
+    .hw-container tbody tr{
+        width: calc(50% - 8px);
+        position: relative;
+        border: 1px solid #e93237 ;
+        padding: 8px;
+        margin: 4px;
+        background-color: #e79288;
+    }
+    .del-container{
+        width:60%;
+        height: 40%;
+        margin:auto;
+        margin-top: 10%;
+    }
+    #del-card-header{
+        height:5%;
+    }
+    .del-container .btn-danger{
+        margin-bottom: 10px;
+    }
+    .common-form{
+        display:grid !important;
+    }
+    .common-form .btn-danger{
+        width:50%;
+        margin-top: 5px;
+        margin: auto;
+    }
+    #id_search_text{
+        margin-bottom: 10px;
+    }
+}
+
+
+    

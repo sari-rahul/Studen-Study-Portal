@@ -16,6 +16,7 @@ body {
     width: 100%;
 }
 
+
 body {
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.5));
     overflow-x: hidden;
@@ -30,7 +31,7 @@ body {
 /*------------------------------------------------------ MAIN*/
 main {
     font-family: Barlow, Quicksand, Rubik, sans-serif, serif, 'Times New Roman', Times, serif !important;
-    min-height: 70vh;
+    min-height: 100vh !important;
 }
 /*------------------------------------------------------ USERNAME*/
 .username{
@@ -270,23 +271,6 @@ td .form-check{
     text-transform: capitalize !important;
     font-weight: 600;
     color: #0d494e;
-}
-/*------------------------------------------------------ NOTES UPDATE SECTION*/
-
-.notes-card-footer{
-    display: inline-flex;
-    justify-content:space-between;
-}
-#edit-btn{
-    font-size: larger;
-    color: #061e21;
-    
-}
-#edit-btn:hover{
-    font-weight: 700;
-}
-.trash-btn{
-  position: fixed;
 }
 
 /*------------------------------------------------------ HOMEWORK DETAIL SECTION*/
@@ -531,6 +515,7 @@ td .form-check{
 /*------------------------------------------------------MEDIA QUERIES*/
 
 @media screen and (max-width:800px){
+    
     .hw-container thead{
         display :none;
     }
