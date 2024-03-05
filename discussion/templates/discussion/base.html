@@ -41,14 +41,13 @@
            aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link {% if '/' == request.path %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if request.path == discussion %}active{% endif %}" aria-current="page" href="{% url 'discussion' %}">Dashboard</a>
+              <a class="nav-link {% if discussion == request.path %}active {% endif %}" aria-current="page" href="{% url 'discussion' %}">Dashboard</a>
             </li>
             {% if user.is_authenticated%}
             <li class="nav-item">

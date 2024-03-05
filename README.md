@@ -387,6 +387,7 @@ Testing documentation can be found [here.](./TESTING.md)
 
 ## Bugs
 1. The check boxes in the project (in Home work and To-Do pages) do not work as per needed.Howerver the 'Mark as completed' attains the requirement of updating the status of the items in the table.
+2. The active class is not getting activated for links in discussion app navbar.
 
 ## Technologies And Languages
 ### Languages Used

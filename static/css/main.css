@@ -60,6 +60,9 @@ main {
     text-transform: uppercase;
     font-weight: 700;
 }
+.navbar-dark .navbar-nav .nav-link .active {
+    color: #fff;
+}
 #profile-name{
     text-transform:none !important;
 }
@@ -177,6 +180,12 @@ button.btn.btn-outline-info{
 .btn-signup {
     background-color: #e93237 !important;
     color:white ;
+}
+.err-btn{
+    color:#061e21
+}
+.err-btn:hover{
+    cursor:pointer;
 }
 
 /*------------------------------------------------------ LEGEND*/
