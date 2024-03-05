@@ -218,7 +218,7 @@ def todo(request):
             todos.save()
             form = Todoform()
             messages.success(request,
-                             f"Items added from {request.user.username}!!!")
+                             f"Items added to your account!!!")
     else:
         form = Todoform()
 

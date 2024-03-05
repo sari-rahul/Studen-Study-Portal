@@ -35,7 +35,7 @@ class TestDashboardViews(TestCase):
             'notes'), notes)
         self.assertEqual(response.status_code, 200)
         self.assertIn(
-            b'Notes added successfully from myUsername account',
+            b'Notes added successfully from your account',
             response.content
         )
 
@@ -71,7 +71,7 @@ class TestDashboardViews(TestCase):
                }
         response = self.client.post(reverse('todo'), todo)
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b'Items added to To-Do list from myUsername!!!',
+        self.assertIn(b'Items added to your account!!!',
                       response.content)
 
 # --------------------------------------------------------- TEST HOME VIEWS
