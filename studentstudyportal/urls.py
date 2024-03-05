@@ -28,4 +28,4 @@ urlpatterns = [
 ]
 handler404 = handler404
 handler500 = handler500
-#handler403 = handler403
+handler403 = handler403

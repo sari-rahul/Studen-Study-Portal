@@ -1,7 +1,6 @@
 from django.test import TestCase
 from .forms import Notesform, Homeworkform, Todoform, Commonform
 
-
 class TestNotesform(TestCase):
 
     def test_form_is_valid(self):
@@ -34,3 +33,4 @@ class TestCommonform(TestCase):
     def test_form_is_valid(self):
         common_form = Commonform({'search_text': 'test text'})
         self.assertTrue(common_form.is_valid(), msg="Form is not valid")
+

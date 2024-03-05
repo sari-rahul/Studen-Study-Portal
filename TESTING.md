@@ -9,6 +9,7 @@ Go back to [README.md](/README.md)
 - [Responsiveness](#responsiveness)
 - [Browser Compatibility](#browser-compatibility)
 - [Lighthouse](#lighthouse)
+- [Automated Testing](#automated-testing)
 - [Manual Testing](#manual-testing)
 
 ## Code Validation
@@ -81,6 +82,12 @@ Further testing was done on mobile to confirm all is working as expected.
 |Sign Up Page|![Sign In  page lighthouse validation](static/images/readme_images/test-results/ssp-lighthouse-signup.png)|PASS|
 |Login Page|![Log In page lighthouse validation](static/images/readme_images/test-results/ssp-lighthouse-signin.png)|PASS|
 |Signout Page|![Signout page lighthouse validation](static/images/readme_images/test-results/ssp-lighthouse-signout.png)|PASS|
+
+
+## Automated Testing
+Automated testing has been carried out on all forms and some of the views from dashboard app. Testing has also been done on 404 error of this website. In total 12 test has been run. All of them have passed.
+
+![Automated test result](static/images/readme_images/ssp-auto-test.png)
 
 
 ## Manual Testing
