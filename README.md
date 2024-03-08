@@ -1,6 +1,6 @@
 # Student Study Portal
 
-[Live Deployed site](https://student-study-portal-9cc1c977016f.herokuapp.com/)
+[Live Deployed site](https://studen-study-portal-1.onrender.com/)
 
 Student Study Portal is a full stack project which allows the students to create notes,save homeworks,Create To-Do list,Search in books, Youtube and Wikipedia.It also has a calculator built-in. One of the major feature of this project is It has a built in discussion forum where students can ask doubts to others people and get answers. The Project was created as apart is Fullstack Software Development Course at Code Institute.
 
@@ -459,6 +459,25 @@ To ensure the application is deployed correctly on Heroku it is mandatory to upd
 3. Open Git Bash and change the working directory to the location where you want the cloned directory. 
 4. Type git clone and then paste the link.
 5. Press Enter to create your local clone.
+
+### Deployment on Render
+
+This project was deployed on Heroku during the development stage and due to technical reasons it was deployed on Render during the final stage.
+To deploy on Render the following steps were taken:
+- Create a new database on ElephantSQL and copy all the data from the existing database to the new database.
+- Connect the new database to the project.
+- Create a build.sh file in the root directory.
+- Add the code for error, collectstatic, installing all the requirement files, makemigrtaions amd migrate in that file.
+- Add the code in settings.py for using Render as a host.
+- Remove the Procfile.
+- Add, Commit and Push to Git.
+- Create an account in Render.
+- Add the name ,location, gunicorn app and build command in the form.
+- Set the environmental variable WEB_CONCURRENCY = 4.
+- Add the env.py file into the Secret files and save it.
+- Click Create Web Services button.
+- The build is shown and on clicking the link the Site opens.
+
 
 ## Credits
 ### Media
