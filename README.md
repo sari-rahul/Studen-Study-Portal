@@ -62,6 +62,7 @@ Student Study Portal is a full stack project which allows the students to create
 -   [Deployment](#deployment)
     -   [Before Deployment](#before-deployment)
     -   [Deployment on Heroku](#deployment-on-heroku)
+    -   [Deployment on Render](#deployment-on-render)
     -   [Creating A Fork](#creating-a-fork)
     -   [Cloning Repository](#cloning-repository)
 -   [Credits](#credits)
