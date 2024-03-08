@@ -34,7 +34,10 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['8000-sarirahul-studenstudypo-1lueu1381ju.ws-eu108.gitpod.io',
                  '.herokuapp.com']
-
+# Add Render.com URL to allowed hosts
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+   ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 
